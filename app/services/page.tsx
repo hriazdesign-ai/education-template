@@ -92,11 +92,10 @@ export default function ServicesPage() {
           label: "Personalised learning support",
         }}
         showConsultationCard={false}
+        padding="contact"
       />
 
-      <div className="-mt-14 sm:-mt-16">
-        <ServicesGrid showHeading={false} tone="white" />
-      </div>
+      <ServicesGrid showHeading={false} tone="white" />
 
       <section className="bg-section-warm py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

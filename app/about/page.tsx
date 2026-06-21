@@ -53,6 +53,7 @@ export default function AboutPage() {
           alt: "Tutor supporting a student during a lesson",
           label: "Personalised education support",
         }}
+        padding="contact"
       />
 
       <StatsSection />

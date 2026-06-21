@@ -13,6 +13,7 @@ export default function Home() {
       <HeroSection
         title="Helping Students Build Confidence & Achieve Their Potential"
         description="Personalised tutoring and educational support for primary, secondary and college students. We help learners strengthen skills, improve results and enjoy learning."
+        padding="contact"
       />
       <StatsSection />
       <SoftwareLogosSection />

@@ -56,9 +56,10 @@ export default function PricingPage() {
           label: "Flexible learning support",
         }}
         showConsultationCard={false}
+        padding="contact"
       />
 
-      <section className="bg-section-white py-16 sm:py-24">
+      <section className="bg-section-white pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
             {pricingPlans.map((plan) => (
@@ -145,7 +146,11 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="bg-section-warm py-16 sm:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="border-t border-primary/10" />
+      </div>
+
+      <section className="bg-section-warm pt-12 pb-16 sm:py-24">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <SectionHeading

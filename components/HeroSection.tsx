@@ -81,6 +81,8 @@ export default function HeroSection({
       ? "py-16 lg:py-24"
       : "py-16 sm:py-24 lg:py-32";
 
+  const alignClass = padding === "default" ? "items-center" : "items-start";
+
   return (
     <section className="relative overflow-hidden bg-section-warm">
       <div className="absolute inset-0 bg-[linear-gradient(145deg,_rgba(255,252,248,0.95)_0%,_transparent_42%)]" />
@@ -88,7 +90,7 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_5%_85%,_rgba(30,58,95,0.07)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-primary/10" />
 
-      <div className={`relative mx-auto grid max-w-6xl items-center gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>
+      <div className={`relative mx-auto grid max-w-6xl ${alignClass} gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>
         <div>
           <span className="mb-4 block h-1 w-10 rounded-none bg-accent-text" />
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent-text">
@@ -138,7 +140,11 @@ export default function HeroSection({
         )}
 
         {!showContactCard && image && (
-          <div className="relative -mx-4 pb-12 sm:-mx-6 sm:pb-14 lg:mx-0 lg:pb-0">
+          <div
+            className={`relative -mx-4 sm:-mx-6 lg:mx-0 ${
+              showConsultationCard ? "pb-12 sm:pb-14" : "pb-0"
+            } lg:pb-0`}
+          >
             <div className="relative mx-4 sm:mx-6 lg:mx-0">
               <ImagePlaceholder
                 src={image.src}

@@ -48,7 +48,7 @@ export default function ContactPage() {
         padding="contact"
       />
 
-      <section className="bg-section-white py-16 lg:py-24">
+      <section className="bg-section-white py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 lg:hidden">
             <ImagePlaceholder
@@ -257,7 +257,7 @@ export default function ContactPage() {
         <div className="border-t border-primary/10" />
       </div>
 
-      <section className="bg-section-warm py-16 sm:py-24">
+      <section className="bg-section-warm pt-12 pb-16 sm:py-24">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <SectionHeading
