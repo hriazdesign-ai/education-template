@@ -89,8 +89,8 @@ export default function ImagePlaceholder({
         role="img"
         aria-label={alt}
       >
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(30,58,95,0.04)_0%,_transparent_40%,_transparent_60%,_rgba(47,125,107,0.06)_100%)]" />
-        <div className="absolute inset-y-0 left-0 w-1/3 bg-[radial-gradient(ellipse_at_left,_rgba(30,58,95,0.08)_0%,_transparent_70%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(15,118,110,0.05)_0%,_transparent_40%,_transparent_60%,_rgba(245,158,122,0.07)_100%)]" />
+        <div className="absolute inset-y-0 left-0 w-1/3 bg-[radial-gradient(ellipse_at_left,_rgba(15,118,110,0.08)_0%,_transparent_70%)]" />
         <p className="absolute bottom-3 left-4 text-xs font-medium text-text-muted/80 sm:bottom-4 sm:left-5">
           <span className="font-mono text-[11px] text-accent-text">{filename}</span>
         </p>
@@ -104,8 +104,8 @@ export default function ImagePlaceholder({
       role="img"
       aria-label={alt}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,_rgba(47,125,107,0.1)_0%,_transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_85%,_rgba(30,58,95,0.06)_0%,_transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,_rgba(245,158,122,0.12)_0%,_transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_85%,_rgba(15,118,110,0.07)_0%,_transparent_45%)]" />
       <div className="relative flex flex-col items-center px-6 text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-section-white/80 ring-1 ring-primary/10">
           <PlaceholderIcon />

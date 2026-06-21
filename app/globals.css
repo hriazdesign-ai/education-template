@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f5f2;
+  --background: #faf9f6;
   --section-white: #ffffff;
-  --section-warm: #f7f5f2;
-  --section-mint: #f2f6f5;
-  --primary: #1e3a5f;
-  --primary-light: #2a5080;
-  --accent: #2f7d6b;
-  --accent-text: #1a5247;
-  --accent-light: #3d9a85;
-  --accent-dark: #144439;
-  --accent-on-dark: #9ed9c8;
-  --accent-button: #1a5247;
-  --accent-button-hover: #144439;
+  --section-warm: #faf9f6;
+  --section-mint: #f3f1ec;
+  --primary: #0f766e;
+  --primary-light: #148f86;
+  --primary-end: #13877d;
+  --accent: #f59e7a;
+  --accent-text: #0f766e;
+  --accent-light: #f8b89a;
+  --accent-dark: #ea8b62;
+  --accent-on-dark: #fbcdb8;
+  --accent-button: #ea8b62;
+  --accent-button-hover: #de8058;
+  --pill-active-bg: #eaf7f5;
   --text: #1f1f1d;
-  --text-muted: #484844;
+  --text-muted: #646460;
 }
 
 @theme inline {
@@ -25,6 +27,7 @@
   --color-section-mint: var(--section-mint);
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
+  --color-primary-end: var(--primary-end);
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-accent-light: var(--accent-light);

@@ -101,9 +101,9 @@ export default function HeroSection({
 
   return (
     <section className="relative overflow-hidden bg-section-warm">
-      <div className="absolute inset-0 bg-[linear-gradient(145deg,_rgba(255,252,248,0.95)_0%,_transparent_42%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_15%,_rgba(47,125,107,0.1)_0%,_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_5%_85%,_rgba(30,58,95,0.07)_0%,_transparent_45%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(145deg,_rgba(250,249,246,0.95)_0%,_transparent_42%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_15%,_rgba(245,158,122,0.12)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_5%_85%,_rgba(15,118,110,0.08)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-primary/10" />
 
       <div className={`relative mx-auto grid max-w-6xl ${alignClass} gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>

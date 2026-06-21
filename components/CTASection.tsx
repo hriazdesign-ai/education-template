@@ -12,8 +12,8 @@ export default function CTASection({
   description = "Book a free learning assessment and discover how personalised support can help build confidence, improve grades and develop lifelong learning skills.",
 }: CTASectionProps) {
   return (
-    <section className="relative overflow-hidden bg-primary py-20 sm:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,_rgba(47,125,107,0.22)_0%,_transparent_55%)]" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-end py-20 sm:py-28">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,_rgba(245,158,122,0.25)_0%,_transparent_55%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_10%_90%,_rgba(255,255,255,0.04)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
 
