@@ -35,27 +35,39 @@ const contactCardHighlights = [
   "Response within 1 business day",
 ];
 
-function ContactInfoCard() {
+function ContactInfoCard({ className = "" }: { className?: string }) {
   return (
-    <div className="rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-8">
-      <p className="font-serif text-2xl font-medium text-primary">
-        Free Learning Assessment
-      </p>
-      <p className="mt-2 text-sm text-text-muted">
-        Speak with an experienced tutor about your child&apos;s learning needs — no obligation,
-        no pressure.
-      </p>
+    <div
+      className={`h-auto rounded-[8px] border border-primary/12 bg-section-white p-5 shadow-lg shadow-primary/8 ring-1 ring-primary/8 sm:p-8 lg:flex lg:h-full lg:flex-col lg:justify-between ${className}`}
+    >
+      <div>
+        <p className="font-serif text-2xl font-medium text-primary">
+          Free Learning Assessment
+        </p>
+        <p className="mt-2 text-sm text-text-muted">
+          Speak with an experienced tutor about your child&apos;s learning needs — no obligation,
+          no pressure.
+        </p>
 
-      <ul className="mt-6 space-y-3">
-        {contactCardHighlights.map((item) => (
-          <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-text">
-            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 ring-1 ring-accent/25">
-              <IconCheck className="h-3 w-3 text-accent-text" />
-            </span>
-            {item}
-          </li>
-        ))}
-      </ul>
+        <ul className="mt-6 space-y-3">
+          {contactCardHighlights.map((item) => (
+            <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-text">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 ring-1 ring-accent/25">
+                <IconCheck className="h-3 w-3 text-accent-text" />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <Link
+        href="#contact-form"
+        className="mt-6 hidden items-center justify-center gap-2 rounded-full bg-accent-button px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/15 transition-all hover:bg-accent-button-hover hover:shadow-lg lg:mt-0 lg:inline-flex lg:w-full"
+      >
+        Book Free Assessment
+        <IconArrowRight className="h-4 w-4" />
+      </Link>
     </div>
   );
 }
@@ -81,7 +93,11 @@ export default function HeroSection({
       ? "py-16 lg:py-24"
       : "py-16 sm:py-24 lg:py-32";
 
-  const alignClass = padding === "default" ? "items-center" : "items-start";
+  const alignClass = showContactCard
+    ? "items-start lg:items-stretch"
+    : padding === "default"
+      ? "items-center"
+      : "items-start";
 
   return (
     <section className="relative overflow-hidden bg-section-warm">
@@ -119,7 +135,7 @@ export default function HeroSection({
           <div className={`flex flex-col gap-4 sm:flex-row sm:items-center ${showContactCard ? "mt-8" : "mt-10"}`}>
             <Link
               href={primaryCta.href}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-button px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/15 transition-all hover:bg-accent-button-hover hover:shadow-lg"
+              className={`inline-flex items-center justify-center gap-2 rounded-full bg-accent-button px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary/15 transition-all hover:bg-accent-button-hover hover:shadow-lg${showContactCard ? " lg:hidden" : ""}`}
             >
               {primaryCta.label}
               <IconArrowRight className="h-4 w-4" />
@@ -134,7 +150,7 @@ export default function HeroSection({
         </div>
 
         {showContactCard && (
-          <div className="w-full max-w-none sm:max-w-none lg:max-w-none">
+          <div className="w-full lg:h-full">
             <ContactInfoCard />
           </div>
         )}
