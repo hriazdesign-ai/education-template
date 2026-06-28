@@ -12,7 +12,14 @@ function AudienceImage({ src, alt }: { src: string; alt: string }) {
   if (publicImageExists(src)) {
     return (
       <div className={`relative w-full overflow-hidden ${IMAGE_HEIGHT}`}>
-        <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          unoptimized
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
       </div>
     );
   }

@@ -83,7 +83,7 @@ export const audiences = [
     description:
       "Supporting students through key stages, coursework and exam preparation.",
     highlights: ["GCSE Support", "Exam Preparation", "Revision Skills"],
-    image: "/images/teaching-4.jpg",
+    image: "/images/secondary.jpg",
     imageAlt: "Secondary students preparing for exams with tutor support",
   },
   {
@@ -91,7 +91,7 @@ export const audiences = [
     description:
       "Focused subject support and guidance for A-Level and advanced study.",
     highlights: ["A-Level Tuition", "Exam Preparation", "Study Skills"],
-    image: "/images/teaching-8.jpg",
+    image: "/images/collage.jpg",
     imageAlt: "College student receiving A-Level subject support",
   },
 ];
