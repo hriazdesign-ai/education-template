@@ -1,7 +1,13 @@
+/**
+ * Inner-page hero (about, contact, services, pricing).
+ * The homepage hero lives in components/HomeHero.tsx — do not use this file for `/`.
+ */
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { IconArrowRight, IconCheck } from "@/components/icons";
+import { homeHeroImageClasses } from "@/lib/homepage-spacing";
 
 type HeroImage = {
   src: string;
@@ -20,10 +26,11 @@ type HeroSectionProps = {
   showConsultationCard?: boolean;
   showContactCard?: boolean;
   padding?: "default" | "contact";
+  imageLayout?: "split" | "shallow";
 };
 
 const defaultHeroImage: HeroImage = {
-  src: "/images/teaching-1.jpg",
+  src: "/images/teaching-1a.jpg",
   alt: "Professional accountant reviewing financial documents with a client",
   label: "Your dedicated accountant",
 };
@@ -72,6 +79,9 @@ function ContactInfoCard({ className = "" }: { className?: string }) {
   );
 }
 
+const shallowImageClasses =
+  "!aspect-auto rounded-none shadow-none ring-0";
+
 export default function HeroSection({
   eyebrow = "TRUSTED EDUCATION SUPPORT",
   title,
@@ -87,7 +97,11 @@ export default function HeroSection({
   showConsultationCard = true,
   showContactCard = false,
   padding = "default",
+  imageLayout = "split",
 }: HeroSectionProps) {
+  const isShallowImage = imageLayout === "shallow";
+  const splitImageClasses = "!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto";
+
   const paddingClass =
     padding === "contact"
       ? "py-16 lg:py-24"
@@ -99,6 +113,67 @@ export default function HeroSection({
       ? "items-center"
       : "items-start";
 
+  if (isShallowImage && !showContactCard && image) {
+    return (
+      <section className="relative overflow-hidden bg-section-warm">
+        <div className={`relative ${homeHeroImageClasses}`}>
+          <ImagePlaceholder
+            src={image.src}
+            alt={image.alt}
+            label={image.label}
+            aspectRatio="wide"
+            priority
+            className={`h-full w-full ${shallowImageClasses}`}
+          />
+        </div>
+
+        <Container className={`relative ${paddingClass}`}>
+          <div className="mx-auto max-w-[800px] text-center">
+            <span className="mx-auto mb-4 block h-1 w-10 rounded-none bg-accent-text" />
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent-text">
+              {eyebrow}
+            </p>
+            <h1 className="font-serif text-4xl font-medium leading-tight tracking-tight text-text sm:text-5xl lg:text-6xl">
+              {title}
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-text-muted sm:text-xl">
+              {description}
+            </p>
+
+            {highlights.length > 0 && (
+              <ul className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-3">
+                {highlights.map((item) => (
+                  <li key={item} className="flex items-center justify-center gap-2 text-sm font-medium text-text">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/15 ring-1 ring-accent/25">
+                      <IconCheck className="h-3 w-3 text-accent-text" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="mt-10 flex w-full max-[359px]:flex-col max-[359px]:items-stretch flex-row items-center justify-center gap-2 min-[360px]:gap-3">
+              <Link
+                href={primaryCta.href}
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-accent-button px-5 py-3 text-sm font-semibold text-white shadow-md shadow-primary/15 transition-all hover:bg-accent-button-hover hover:shadow-lg min-[360px]:flex-none"
+              >
+                {primaryCta.label}
+                <IconArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href={secondaryCta.href}
+                className="inline-flex flex-1 items-center justify-center rounded-full border border-primary/25 bg-section-white px-5 py-3 text-sm font-semibold text-primary transition-colors hover:border-primary/40 hover:bg-primary/5 min-[360px]:flex-none"
+              >
+                {secondaryCta.label}
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section className="relative overflow-hidden bg-section-warm">
       <div className="absolute inset-0 bg-[linear-gradient(145deg,_rgba(250,249,246,0.95)_0%,_transparent_42%)]" />
@@ -106,7 +181,7 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_5%_85%,_rgba(15,118,110,0.08)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-primary/10" />
 
-      <div className={`relative mx-auto grid max-w-6xl ${alignClass} gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 ${paddingClass}`}>
+      <Container className={`relative grid ${alignClass} gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 ${paddingClass}`}>
         <div>
           <span className="mb-4 block h-1 w-10 rounded-none bg-accent-text" />
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent-text">
@@ -115,7 +190,7 @@ export default function HeroSection({
           <h1 className="font-serif text-4xl font-medium leading-tight tracking-tight text-text sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-text-muted sm:text-xl">
+          <p className="mt-6 text-lg leading-relaxed text-text-muted sm:text-xl">
             {description}
           </p>
 
@@ -157,18 +232,18 @@ export default function HeroSection({
 
         {!showContactCard && image && (
           <div
-            className={`relative -mx-4 sm:-mx-6 lg:mx-0 ${
+            className={`relative -mx-5 min-[768px]:-mx-8 lg:mx-0 ${
               showConsultationCard ? "pb-12 sm:pb-14" : "pb-0"
             } lg:pb-0`}
           >
-            <div className="relative mx-4 sm:mx-6 lg:mx-0">
+            <div className="relative mx-5 min-[768px]:mx-8 lg:mx-0">
               <ImagePlaceholder
                 src={image.src}
                 alt={image.alt}
                 label={image.label}
                 aspectRatio="hero"
                 priority
-                className="!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto"
+                className={splitImageClasses}
               />
 
               {showConsultationCard && (
@@ -203,7 +278,7 @@ export default function HeroSection({
             </div>
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

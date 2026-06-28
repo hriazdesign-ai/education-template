@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { DM_Sans, Homemade_Apple, Source_Serif_4 } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { siteConfig } from "@/lib/content";
@@ -15,6 +15,12 @@ const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const homemadeApple = Homemade_Apple({
+  variable: "--font-homemade",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -34,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${dmSans.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${sourceSerif.variable} ${homemadeApple.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-section-warm text-text">
+      <body className="flex min-h-full flex-col overflow-x-hidden bg-section-warm text-text">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

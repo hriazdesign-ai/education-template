@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
@@ -59,7 +60,7 @@ export default function AboutPage() {
       <StatsSection />
 
       <section className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <SectionHeading
@@ -87,15 +88,15 @@ export default function AboutPage() {
               aspectRatio="editorial"
             />
           </div>
-        </div>
+        </Container>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="border-t border-primary/10" />
-      </div>
+      </Container>
 
       <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <ImagePlaceholder
               src="/images/teaching-5.jpg"
@@ -123,22 +124,22 @@ export default function AboutPage() {
               </ul>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="border-t border-primary/10" />
-      </div>
+      </Container>
 
       <section id="team" className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+        <Container>
+          <Container size="prose" pad={false} className="mb-12 text-center">
             <SectionHeading
               eyebrow="Our Tutors"
               title="The people behind the learning"
               description="Experienced, supportive and focused on helping every student reach their potential."
             />
-          </div>
+          </Container>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member) => (
@@ -171,11 +172,11 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Container>
           <ImagePlaceholder
             src="/images/teaching-4.jpg"
             alt="Students engaged in a collaborative learning session"
@@ -183,13 +184,13 @@ export default function AboutPage() {
             aspectRatio="banner"
           />
 
-          <div className="mx-auto mb-12 mt-16 max-w-2xl text-center sm:mt-20">
+          <Container size="prose" pad={false} className="mb-12 mt-16 text-center sm:mt-20">
             <SectionHeading
               eyebrow="Our Approach"
               title="What makes our support different"
               description="Four principles that guide every learning plan."
             />
-          </div>
+          </Container>
 
           <div className="grid gap-6 sm:grid-cols-2">
             {whyChooseUs.map((item) => (
@@ -212,7 +213,7 @@ export default function AboutPage() {
             </Link>{" "}
             for a free assessment.
           </p>
-        </div>
+        </Container>
       </section>
 
       <CTASection />

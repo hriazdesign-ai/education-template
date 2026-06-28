@@ -19,7 +19,7 @@ export default function SectionHeading({
   const barAlign = align === "center" ? "mx-auto" : "";
 
   return (
-    <div className={`max-w-2xl ${alignClass}`}>
+    <div className={`w-full ${alignClass}`}>
       {eyebrow && (
         <>
           {showKeyline && (

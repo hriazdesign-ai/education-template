@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../lib/**/*.ts";
+@source "../components/**/*.tsx";
 
 :root {
   --background: #faf9f6;
@@ -18,6 +20,16 @@
   --pill-active-bg: #eaf7f5;
   --text: #1f1f1d;
   --text-muted: #646460;
+  --figma-hero-teal: #11515a;
+  --figma-navy: #0c1d31;
+  --figma-coral: #ed9876;
+  --figma-mint-bg: #f2f7f7;
+  --figma-green: #8fcd9e;
+  --figma-lavender: #dcddff;
+  --figma-audience-teal: #d6ebeb;
+  --figma-quote-yellow: #fdecb6;
+  --figma-testimonial-peach: #ffe8db;
+  --figma-ink: #17171c;
 }
 
 @theme inline {
@@ -37,8 +49,19 @@
   --color-accent-button-hover: var(--accent-button-hover);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
+  --color-figma-hero-teal: var(--figma-hero-teal);
+  --color-figma-navy: var(--figma-navy);
+  --color-figma-coral: var(--figma-coral);
+  --color-figma-mint-bg: var(--figma-mint-bg);
+  --color-figma-green: var(--figma-green);
+  --color-figma-lavender: var(--figma-lavender);
+  --color-figma-audience-teal: var(--figma-audience-teal);
+  --color-figma-quote-yellow: var(--figma-quote-yellow);
+  --color-figma-testimonial-peach: var(--figma-testimonial-peach);
+  --color-figma-ink: var(--figma-ink);
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-source-serif);
+  --font-display: var(--font-homemade);
 }
 
 body {
@@ -58,4 +81,29 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent-text);
   outline-offset: 2px;
+}
+
+/* Homepage desktop fallbacks — ensures 1060px+ styles apply even if Tailwind misses scanned classes */
+@media (min-width: 1060px) {
+  [data-home-hero-image] {
+    height: 519px;
+  }
+
+  [data-home-nav] {
+    background-color: rgba(17, 81, 90, 0.7);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+
+  [data-home-nav-inner] {
+    height: 80px;
+  }
+
+  [data-pathway-circles] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  [data-pathway-circle] {
+    max-width: none;
+  }
 }

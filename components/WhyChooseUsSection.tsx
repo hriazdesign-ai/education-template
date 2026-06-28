@@ -1,3 +1,4 @@
+import Container from "@/components/Container";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
 import { cardHoverClass } from "@/lib/card-styles";
@@ -11,7 +12,7 @@ type WhyChooseUsSectionProps = {
 export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSectionProps) {
   return (
     <section className={`${sectionToneClasses[tone]} py-16 sm:py-20`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <div>
           <ImagePlaceholder
             src="/images/teaching-2.jpg"
@@ -69,7 +70,7 @@ export default function WhyChooseUsSection({ tone = "mint" }: WhyChooseUsSection
             ))}
           </ul>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

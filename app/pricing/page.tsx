@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import { IconCheck } from "@/components/icons";
@@ -60,7 +61,7 @@ export default function PricingPage() {
       />
 
       <section className="bg-section-white pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="grid gap-6 lg:grid-cols-3">
             {pricingPlans.map((plan) => (
               <article
@@ -143,15 +144,15 @@ export default function PricingPage() {
             </Link>{" "}
             and we&apos;ll recommend the right learning support for your child.
           </p>
-        </div>
+        </Container>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="border-t border-primary/10" />
-      </div>
+      </Container>
 
       <section className="bg-section-warm pt-12 pb-16 sm:py-24">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <Container size="prose">
           <div className="mb-12 text-center">
             <SectionHeading
               eyebrow="FAQ"
@@ -175,7 +176,7 @@ export default function PricingPage() {
               </div>
             ))}
           </dl>
-        </div>
+        </Container>
       </section>
 
       <CTASection

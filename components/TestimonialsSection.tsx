@@ -1,3 +1,4 @@
+import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import { cardHoverClass } from "@/lib/card-styles";
 import { testimonials } from "@/lib/content";
@@ -24,16 +25,17 @@ function StarRating({ size = "md" }: { size?: "md" | "lg" }) {
 export default function TestimonialsSection({ tone = "white" }: TestimonialsSectionProps) {
   return (
     <section className={`${sectionToneClasses[tone]} py-16 sm:py-24`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center text-center sm:mb-12">
+      <Container>
+        <Container size="prose" pad={false} className="mb-10 flex flex-col items-center text-center sm:mb-12">
           <SectionHeading
             eyebrow="Testimonials"
             title="Trusted by parents and students"
             description="Hear from parents and students who have experienced the difference personalised support can make."
           />
-        </div>
+        </Container>
 
-        <div className="mx-auto mb-12 max-w-xl rounded-[8px] border border-primary/10 bg-section-mint px-8 py-10 text-center sm:mb-16 sm:px-12 sm:py-12">
+        <Container size="prose" pad={false} className="mb-12 sm:mb-16">
+          <div className="rounded-[8px] border border-primary/10 bg-section-mint px-8 py-10 text-center sm:px-12 sm:py-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-text">
             Google Reviews
           </p>
@@ -46,7 +48,8 @@ export default function TestimonialsSection({ tone = "white" }: TestimonialsSect
           <p className="mt-3 text-sm text-text-muted">
             Based on 120+ verified Google reviews
           </p>
-        </div>
+          </div>
+        </Container>
 
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial) => (
@@ -78,7 +81,7 @@ export default function TestimonialsSection({ tone = "white" }: TestimonialsSect
             </blockquote>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

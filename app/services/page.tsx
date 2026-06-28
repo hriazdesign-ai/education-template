@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
+import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionHeading from "@/components/SectionHeading";
@@ -98,7 +99,7 @@ export default function ServicesPage() {
       <ServicesGrid showHeading={false} tone="white" />
 
       <section className="bg-section-warm py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Container>
           <ImagePlaceholder
             src="/images/teaching-4.jpg"
             alt="Students engaged in a collaborative learning session"
@@ -106,13 +107,13 @@ export default function ServicesPage() {
             aspectRatio="banner"
           />
 
-          <div className="mx-auto mb-12 mt-16 max-w-2xl text-center sm:mt-20">
+          <Container size="prose" pad={false} className="mb-12 mt-16 text-center sm:mt-20">
             <SectionHeading
               eyebrow="Why Families Choose Us"
               title="Why families choose Bright Path"
               description="Our approach is designed to make tutoring clear, flexible and supportive for both students and parents."
             />
-          </div>
+          </Container>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {familyChoiceCards.map((item) => (
@@ -127,22 +128,22 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="border-t border-primary/10" />
-      </div>
+      </Container>
 
       <section className="bg-section-white py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+        <Container>
+          <Container size="prose" pad={false} className="mb-12 text-center">
             <SectionHeading
               eyebrow="How It Works"
               title="Getting started is simple"
               description="We keep the process clear and supportive, from the first assessment through to regular tutoring sessions."
             />
-          </div>
+          </Container>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((item, index) => (
@@ -171,7 +172,7 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       <CTASection

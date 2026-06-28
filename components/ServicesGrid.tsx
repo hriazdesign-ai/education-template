@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import { IconArrowRight, ServiceIcon } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
@@ -30,9 +31,9 @@ export default function ServicesGrid({
 
   return (
     <section className={`${sectionToneClasses[tone]} ${sectionPadding}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <Container>
         {showHeading && (
-          <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center sm:mb-16">
+          <Container size="prose" pad={false} className="mb-12 flex flex-col items-center text-center sm:mb-16">
             <span className="mx-auto mb-4 block h-1 w-10 rounded-full bg-accent-text" />
             <SectionHeading
               showKeyline={false}
@@ -40,7 +41,7 @@ export default function ServicesGrid({
               title="Support for every stage of learning"
               description="From personalised tutoring and homework support to GCSE and A-Level preparation."
             />
-          </div>
+          </Container>
         )}
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -87,7 +88,7 @@ export default function ServicesGrid({
             </Link>
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

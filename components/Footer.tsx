@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Container from "@/components/Container";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { footerBadges, navLinks, siteConfig } from "@/lib/content";
 
@@ -6,100 +7,100 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-primary-light/30 bg-gradient-to-br from-primary via-primary to-primary-end text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
+    <footer className="bg-[var(--figma-mint-bg)] py-8 min-[1060px]:py-14">
+      <Container>
+        <div className="grid gap-5 border-b border-[var(--figma-hero-teal)]/40 pb-6 min-[1060px]:grid-cols-4 min-[1060px]:gap-[21px] min-[1060px]:pb-[42px]">
+          <div className="flex flex-col gap-3 min-[1060px]:gap-[21px]">
             <Link href="/" className="inline-block">
-              <span className="font-serif text-2xl font-medium">{siteConfig.name}</span>
-              <span className="mt-1 block text-xs font-medium uppercase tracking-widest text-accent-on-dark">
-                {siteConfig.tagline}
+              <span className="inline-flex items-center justify-center bg-[var(--figma-hero-teal)]/40 px-4 py-2 font-serif text-base font-medium text-[var(--figma-ink)] min-[1060px]:px-5 min-[1060px]:py-3 min-[1060px]:text-lg">
+                {siteConfig.name}
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/85">
-            Helping students build confidence, improve results and develop a lifelong love of learning.
+            <p className="max-w-xs text-sm leading-5 text-[var(--figma-ink)]">
+              Helping students build confidence, improve results and develop a lifelong love of
+              learning.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Navigation
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/90 transition-colors hover:text-white"
+          <div className="grid grid-cols-3 gap-x-3 gap-y-4 min-[1060px]:contents">
+            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+              <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-sm min-[1060px]:leading-5">
+                NAVIGATION
+              </h3>
+              <ul className="flex flex-col gap-1 min-[1060px]:gap-2">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-xs leading-4 text-[var(--figma-ink)] transition-opacity hover:opacity-70 min-[1060px]:text-sm min-[1060px]:leading-5"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+              <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-sm min-[1060px]:leading-5">
+                SERVICES
+              </h3>
+              <ul className="flex flex-col gap-1 text-xs leading-4 text-[var(--figma-ink)] min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5">
+                <li>1-to-1 Tutoring</li>
+                <li>GCSE Preparation</li>
+                <li>A-Level Support</li>
+                <li>Homework Help</li>
+                <li>Online Learning</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+              <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-base min-[1060px]:leading-[22px]">
+                CONTACT
+              </h3>
+              <ul className="flex flex-col gap-1 min-[1060px]:gap-2">
+                <li>
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    className="flex items-start gap-1.5 text-xs leading-4 text-[var(--figma-ink)] transition-opacity hover:opacity-70 min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5"
                   >
-                    {link.label}
-                  </Link>
+                    <IconPhone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--figma-hero-teal)] min-[1060px]:h-[19px] min-[1060px]:w-[19px]" />
+                    <span>{siteConfig.phone}</span>
+                  </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Services
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>1-to-1 Tutoring</li>
-              <li>GCSE Preparation</li>
-              <li>A-Level Support</li>
-              <li>Homework Help</li>
-              <li>Online Learning</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/75">
-              Contact
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="flex items-start gap-2 text-sm text-white/90 transition-colors hover:text-white"
-                >
-                  <IconPhone className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                  {siteConfig.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-start gap-2 text-sm text-white/90 transition-colors hover:text-white"
-                >
-                  <IconMail className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                  {siteConfig.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-sm text-white/90">
-                <IconLocation className="mt-0.5 h-4 w-4 shrink-0 text-accent-on-dark" />
-                {siteConfig.address}
-              </li>
-            </ul>
+                <li>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="flex items-start gap-1.5 break-all text-xs leading-4 text-[var(--figma-ink)] transition-opacity hover:opacity-70 min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5"
+                  >
+                    <IconMail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--figma-hero-teal)] min-[1060px]:h-[19px] min-[1060px]:w-[19px]" />
+                    <span>{siteConfig.email}</span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-1.5 text-xs leading-4 text-[var(--figma-ink)] min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5">
+                  <IconLocation className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--figma-hero-teal)] min-[1060px]:h-[19px] min-[1060px]:w-[19px]" />
+                  <span>{siteConfig.address}</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-2.5 border-t border-white/15 pt-8">
+        <div className="flex flex-wrap gap-2 py-4 min-[1060px]:gap-3 min-[1060px]:py-7">
           {footerBadges.map((badge) => (
             <span
               key={badge}
-              className="rounded-[8px] border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/85"
+              className="rounded-lg bg-[var(--figma-hero-teal)]/40 px-2 py-1.5 text-xs font-medium leading-[14px] text-white min-[1060px]:px-2.5 min-[1060px]:py-2.5 min-[1060px]:text-sm"
             >
               {badge}
             </span>
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs text-white/70">
-            &copy; {currentYear} {siteConfig.name}. All rights reserved.
-          </p>
-        </div>
-      </div>
+        <p className="text-xs leading-[22px] text-[var(--figma-ink)]">
+          &copy; {currentYear} {siteConfig.name}. All rights reserved.
+        </p>
+      </Container>
     </footer>
   );
 }

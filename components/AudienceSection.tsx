@@ -1,3 +1,4 @@
+import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import { IconCheck } from "@/components/icons";
 import { audiences } from "@/lib/content";
@@ -20,14 +21,14 @@ export default function AudienceSection({
 
   return (
     <section className={`${sectionToneClasses[tone]} ${sectionPadding}`}>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center text-center sm:mb-16 lg:mb-20">
+      <Container>
+        <Container size="prose" pad={false} className="mb-12 flex flex-col items-center text-center sm:mb-16 lg:mb-20">
           <SectionHeading
             eyebrow="Who We Help"
             title="Support tailored to every learner"
             description="Whether your child is building confidence in primary school or preparing for important exams, we tailor support to their goals."
           />
-        </div>
+        </Container>
 
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {audiences.map((audience, index) => (
@@ -77,7 +78,7 @@ export default function AudienceSection({
             </article>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

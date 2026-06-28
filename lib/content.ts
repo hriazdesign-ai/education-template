@@ -27,37 +27,37 @@ export const services = [
     title: "1-to-1 Tutoring",
     description:
       "Personalised support tailored to each student’s ability, learning style, and academic goals.",
-    icon: "document",
+    icon: "tutoring",
   },
   {
     title: "GCSE Preparation",
     description:
       "Structured revision and exam support to help students build confidence before GCSE assessments.",
-    icon: "ledger",
+    icon: "gcse",
   },
   {
     title: "A-Level Support",
     description:
       "Subject-focused tuition for students who need deeper support with higher-level study.",
-    icon: "payroll",
+    icon: "alevel",
   },
   {
     title: "Homework Help",
     description:
       "Ongoing support to reinforce classroom learning and help students stay on track.",
-    icon: "vat",
+    icon: "homework",
   },
   {
     title: "Online Learning",
     description:
       "Flexible remote lessons designed to fit around school, family life, and busy schedules.",
-    icon: "accounts",
+    icon: "online",
   },
   {
     title: "Study Skills",
     description:
       "Helping students improve focus, revision habits, confidence, and independent learning.",
-    icon: "planning",
+    icon: "study",
   },
 ];
 
@@ -67,18 +67,24 @@ export const audiences = [
     description:
       "Building strong foundations in literacy, numeracy and confidence from an early age.",
     highlights: ["Reading", "Writing", "Mathematics"],
+    image: "/images/teaching-2.jpg",
+    imageAlt: "Primary school student reading with a tutor",
   },
   {
     title: "Secondary Students",
     description:
       "Supporting students through key stages, coursework and exam preparation.",
-    highlights: ["GCSE Support", "Homework Help", "Revision Skills"],
+    highlights: ["GCSE Support", "Exam Preparation", "Revision Skills"],
+    image: "/images/teaching-4.jpg",
+    imageAlt: "Secondary students preparing for exams with tutor support",
   },
   {
     title: "College Students",
     description:
       "Focused subject support and guidance for A-Level and advanced study.",
     highlights: ["A-Level Tuition", "Exam Preparation", "Study Skills"],
+    image: "/images/teaching-8.jpg",
+    imageAlt: "College student receiving A-Level subject support",
   },
 ];
 
