@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { sectionY } from "@/lib/layout";
 import CTASection from "@/components/CTASection";
 import Container from "@/components/Container";
 import HeroSection from "@/components/HeroSection";
@@ -59,7 +60,7 @@ export default function AboutPage() {
 
       <StatsSection />
 
-      <section className="bg-section-white py-16 sm:py-24">
+      <section className={`bg-section-white ${sectionY}`}>
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -95,7 +96,7 @@ export default function AboutPage() {
         <div className="border-t border-primary/10" />
       </Container>
 
-      <section className="bg-section-warm py-16 sm:py-24">
+      <section className={`bg-section-warm ${sectionY}`}>
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <ImagePlaceholder
@@ -131,7 +132,7 @@ export default function AboutPage() {
         <div className="border-t border-primary/10" />
       </Container>
 
-      <section id="team" className="bg-section-white py-16 sm:py-24">
+      <section id="team" className={`bg-section-white ${sectionY}`}>
         <Container>
           <Container size="prose" pad={false} className="mb-12 text-center">
             <SectionHeading
@@ -175,7 +176,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-section-warm py-16 sm:py-24">
+      <section className={`bg-section-warm ${sectionY}`}>
         <Container>
           <ImagePlaceholder
             src="/images/teaching-4.jpg"

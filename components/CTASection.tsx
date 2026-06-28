@@ -1,23 +1,30 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import { siteConfig } from "@/lib/content";
-import { homeSectionY } from "@/lib/homepage-spacing";
+import { sectionIntroGap, sectionY } from "@/lib/layout";
 
 type CTASectionProps = {
   title?: string;
   description?: string;
   variant?: "default" | "homepage";
+  spacing?: "home" | "internal" | "services";
 };
 
 export default function CTASection({
   title = "Ready to unlock your child's potential?",
   description = "Book a free learning assessment and discover how personalised support can help build confidence, improve grades and develop lifelong learning skills.",
   variant = "default",
+  spacing = "home",
 }: CTASectionProps) {
+  const sectionPadding = sectionY;
+
   if (variant === "homepage") {
     return (
-      <section className={`bg-[rgba(12,29,49,0.9)] ${homeSectionY}`}>
-        <Container size="prose" className="flex flex-col items-center gap-6 text-center">
+      <section className={`bg-[rgba(12,29,49,0.9)] ${sectionPadding}`}>
+        <Container
+          size="prose"
+          className={`flex flex-col items-center text-center ${sectionIntroGap}`}
+        >
           <h2 className="text-[28px] font-normal leading-[38px] tracking-[-0.4px] text-white min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px]">
             {title}
           </h2>
@@ -42,7 +49,7 @@ export default function CTASection({
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-end py-20 sm:py-28">
+    <section className={`relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-end ${sectionPadding}`}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,_rgba(245,158,122,0.25)_0%,_transparent_55%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_10%_90%,_rgba(255,255,255,0.04)_0%,_transparent_45%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />

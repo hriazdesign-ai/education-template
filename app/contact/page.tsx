@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
 import { siteConfig } from "@/lib/content";
+import { sectionY } from "@/lib/layout";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -47,9 +48,10 @@ export default function ContactPage() {
         image={null}
         showContactCard
         padding="contact"
+        internalLayout
       />
 
-      <section className="bg-section-white py-16 sm:py-24">
+      <section className={`bg-section-white ${sectionY}`}>
         <Container>
           <div className="mb-10 lg:hidden">
             <ImagePlaceholder
@@ -258,7 +260,7 @@ export default function ContactPage() {
         <div className="border-t border-primary/10" />
       </Container>
 
-      <section className="bg-section-warm pt-12 pb-16 sm:py-24">
+      <section className={`bg-section-warm ${sectionY}`}>
         <Container size="prose">
           <div className="mb-12 text-center">
             <SectionHeading
@@ -283,6 +285,7 @@ export default function ContactPage() {
       </section>
 
       <CTASection
+        spacing="internal"
         title="Ready to unlock your child's potential?"
         description="Book a free learning assessment and discover how personalised tutoring can help build confidence, improve grades and develop lifelong learning skills."
       />

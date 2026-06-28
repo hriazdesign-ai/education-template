@@ -3,15 +3,16 @@ import Container from "@/components/Container";
 import Logo from "@/components/Logo";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { footerBadges, primaryNavLinks, siteConfig } from "@/lib/content";
+import { sectionY } from "@/lib/layout";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--figma-mint-bg)] py-8 min-[1060px]:py-14">
+    <footer className={`bg-[var(--figma-mint-bg)] ${sectionY}`}>
       <Container>
-        <div className="grid gap-5 border-b border-[var(--figma-hero-teal)]/40 pb-6 min-[1060px]:grid-cols-4 min-[1060px]:gap-[21px] min-[1060px]:pb-[42px]">
-          <div className="flex flex-col gap-3 min-[1060px]:gap-[21px]">
+        <div className="grid gap-6 border-b border-[var(--figma-hero-teal)]/40 pb-5 min-[1060px]:grid-cols-4 min-[1060px]:gap-[21px] min-[1060px]:pb-[42px]">
+          <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
             <Logo variant="dark" />
             <p className="max-w-xs text-sm leading-5 text-[var(--figma-ink)]">
               Helping students build confidence, improve results and develop a lifelong love of
@@ -19,12 +20,12 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-x-3 gap-y-4 min-[1060px]:contents">
-            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5 min-[1060px]:contents">
+            <div className="flex flex-col gap-1.5 min-[1060px]:gap-[21px]">
               <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-sm min-[1060px]:leading-5">
                 NAVIGATION
               </h3>
-              <ul className="flex flex-col gap-1 min-[1060px]:gap-2">
+              <ul className="flex flex-col gap-0.5 min-[1060px]:gap-2">
                 {primaryNavLinks.map((link) => (
                   <li key={`${link.href}-${link.label}`}>
                     <Link
@@ -38,11 +39,11 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+            <div className="flex flex-col gap-1.5 min-[1060px]:gap-[21px]">
               <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-sm min-[1060px]:leading-5">
                 SERVICES
               </h3>
-              <ul className="flex flex-col gap-1 text-xs leading-4 text-[var(--figma-ink)] min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5">
+              <ul className="flex flex-col gap-0.5 text-xs leading-4 text-[var(--figma-ink)] min-[1060px]:gap-2 min-[1060px]:text-sm min-[1060px]:leading-5">
                 <li>1-to-1 Tutoring</li>
                 <li>GCSE Preparation</li>
                 <li>A-Level Support</li>
@@ -51,11 +52,11 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-2 min-[1060px]:gap-[21px]">
+            <div className="col-span-2 flex flex-col gap-1.5 min-[1060px]:col-span-1 min-[1060px]:gap-[21px]">
               <h3 className="text-xs font-medium leading-4 text-[var(--figma-ink)] min-[1060px]:text-base min-[1060px]:leading-[22px]">
                 CONTACT
               </h3>
-              <ul className="flex flex-col gap-1 min-[1060px]:gap-2">
+              <ul className="flex flex-col gap-0.5 min-[1060px]:gap-2">
                 <li>
                   <a
                     href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
@@ -83,7 +84,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 py-4 min-[1060px]:gap-3 min-[1060px]:py-7">
+        <div className="flex flex-wrap gap-2 py-3 min-[1060px]:gap-3 min-[1060px]:py-7">
           {footerBadges.map((badge) => (
             <span
               key={badge}

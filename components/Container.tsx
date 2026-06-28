@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { layoutMaxWidth, layoutPadding } from "@/lib/layout";
 
 export type ContainerSize = "prose" | "content" | "layout";
 
@@ -13,8 +14,10 @@ type ContainerProps = {
 const sizeClasses: Record<ContainerSize, string> = {
   prose: "max-w-[800px]",
   content: "max-w-[1100px]",
-  layout: "max-w-[1440px]",
+  layout: layoutMaxWidth,
 };
+
+export { layoutPadding as containerPadding };
 
 export default function Container({
   size = "layout",
@@ -24,7 +27,7 @@ export default function Container({
   children,
   ...rest
 }: ContainerProps) {
-  const paddingClass = pad ? "px-5 min-[768px]:px-8" : "";
+  const paddingClass = pad ? layoutPadding : "";
 
   return (
     <Component

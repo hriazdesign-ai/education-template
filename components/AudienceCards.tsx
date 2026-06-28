@@ -4,7 +4,7 @@ import { IconCheck } from "@/components/icons";
 import SectionIntro from "@/components/SectionIntro";
 import { audiences } from "@/lib/content";
 import { publicImageExists } from "@/lib/image-utils";
-import { homeSectionBottom, homeSectionY } from "@/lib/homepage-spacing";
+import { contentToCards, sectionBottom } from "@/lib/layout";
 
 const IMAGE_HEIGHT = "h-[150px] min-[768px]:h-[200px] min-[1060px]:h-[220px]";
 
@@ -37,8 +37,8 @@ function AudienceImage({ src, alt }: { src: string; alt: string }) {
 
 export default function AudienceCards() {
   return (
-    <section className={`bg-[var(--figma-navy)] ${homeSectionBottom}`}>
-      <Container className={homeSectionY}>
+    <section className={`bg-[var(--figma-navy)] ${sectionBottom}`}>
+      <Container>
         <SectionIntro
           eyebrow="Who We Help"
           title="Support tailored to every learner"
@@ -48,7 +48,7 @@ export default function AudienceCards() {
         />
       </Container>
 
-      <Container>
+      <Container className={contentToCards}>
         <ul className="grid gap-4 min-[768px]:grid-cols-3 min-[1060px]:gap-6">
           {audiences.map((audience, index) => {
             const isCenter = index === 1;

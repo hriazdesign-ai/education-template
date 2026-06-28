@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Container from "@/components/Container";
-import SectionIntro from "@/components/SectionIntro";
-import { IconArrowRight, ServiceIcon } from "@/components/icons";
+import { IconArrowRight } from "@/components/icons";
 import { services } from "@/lib/content";
-import { contentToCards, groupTop, sectionBottom } from "@/lib/layout";
+import { sectionBottom, sectionTop } from "@/lib/layout";
 
 const cardSurfaceClasses = [
   "relative flex h-full min-h-full flex-col overflow-hidden",
@@ -24,19 +23,10 @@ const accentBarClasses = [
   "motion-reduce:transition-none",
 ].join(" ");
 
-export default function ServiceCards() {
+export default function ServicesPageCards() {
   return (
-    <section className={`bg-[var(--figma-mint-bg)] ${sectionBottom}`}>
+    <section className={`bg-[var(--figma-mint-bg)] ${sectionTop} ${sectionBottom}`}>
       <Container>
-        <SectionIntro
-          eyebrow="Our Services"
-          title="Support for every stage of learning"
-          description="From personalised tutoring and homework support to GCSE and A-Level preparation."
-          pillVariant="teal"
-        />
-      </Container>
-
-      <Container className={contentToCards}>
         <ul className="grid gap-4 min-[768px]:grid-cols-3 min-[768px]:gap-0 min-[768px]:border min-[768px]:border-[var(--figma-hero-teal)]/40">
           {services.map((service, index) => {
             const isLast = index === services.length - 1;
@@ -52,25 +42,26 @@ export default function ServiceCards() {
                   isLastRow ? "min-[768px]:border-b-0" : ""
                 }`}
               >
-                <div className={`${cardSurfaceClasses} px-7 pt-10 pb-10`}>
+                <div
+                  className={`${cardSurfaceClasses} flex flex-col gap-6 px-6 py-8 min-[768px]:gap-10 min-[768px]:px-7 min-[768px]:py-10`}
+                >
                   <span aria-hidden="true" className={accentBarClasses} />
-                  <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-white transition-colors duration-[250ms] ease-out group-hover:bg-[#F2F7F7] group-focus-within:bg-[#F2F7F7]">
-                    <ServiceIcon
-                      name={service.icon}
-                      className="h-6 w-6 text-[var(--figma-ink)]"
-                    />
+                  <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-white text-lg tracking-[-0.36px] text-[var(--figma-ink)] transition-colors duration-[250ms] ease-out group-hover:bg-[#F2F7F7] group-focus-within:bg-[#F2F7F7]">
+                    {index + 1}
                   </div>
 
-                  <h3 className="mt-10 text-xl leading-[22px] tracking-[-0.01em] text-[var(--figma-ink)]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-6 text-base leading-[22px] text-[var(--figma-ink)]">
-                    {service.description}
-                  </p>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl leading-[22px] tracking-[-0.2px] text-[var(--figma-ink)]">
+                      {service.title}
+                    </h3>
+                    <p className="text-base leading-[22px] text-[var(--figma-ink)]">
+                      {service.description}
+                    </p>
+                  </div>
 
                   <Link
-                    href="/services"
-                    className="mt-auto flex items-center justify-between gap-4 pt-8 text-base font-medium uppercase leading-[22px] text-[var(--figma-ink)]/60 transition-[color] duration-[250ms] ease-out group-hover:text-[var(--figma-ink)] group-focus-within:text-[var(--figma-ink)]"
+                    href="/contact"
+                    className="mt-auto flex items-center justify-between gap-4 text-base font-medium uppercase leading-[22px] text-[var(--figma-ink)]/60 transition-[color] duration-[250ms] ease-out group-hover:text-[var(--figma-ink)] group-focus-within:text-[var(--figma-ink)]"
                   >
                     <span>Learn More</span>
                     <IconArrowRight className="h-4 w-4 shrink-0 transition-transform duration-[250ms] ease-out group-hover:translate-x-1.5 group-focus-within:translate-x-1.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-focus-within:translate-x-0" />
@@ -80,17 +71,6 @@ export default function ServiceCards() {
             );
           })}
         </ul>
-      </Container>
-
-      <Container className={groupTop}>
-        <div className="flex justify-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center rounded-[64px] bg-[var(--figma-hero-teal)] px-5 py-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            View All Services
-          </Link>
-        </div>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
+import { sectionIntroGap } from "@/lib/layout";
 
 type SectionIntroProps = {
   eyebrow: string;
@@ -27,7 +28,7 @@ export default function SectionIntro({
     <Container
       size="prose"
       pad={false}
-      className={`flex flex-col gap-5 min-[768px]:gap-6 ${alignClass} ${className}`}
+      className={`flex flex-col ${sectionIntroGap} ${alignClass} ${className}`}
     >
       <EyebrowPill variant={resolvedPill}>{eyebrow}</EyebrowPill>
       <h2

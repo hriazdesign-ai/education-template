@@ -7,7 +7,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { IconArrowRight, IconCheck } from "@/components/icons";
-import { homeHeroImageClasses } from "@/lib/homepage-spacing";
+import { homeHeroImageClasses, heroBreathing, navOffset, sectionBottom } from "@/lib/layout";
 
 type HeroImage = {
   src: string;
@@ -27,6 +27,7 @@ type HeroSectionProps = {
   showContactCard?: boolean;
   padding?: "default" | "contact";
   imageLayout?: "split" | "shallow";
+  internalLayout?: boolean;
 };
 
 const defaultHeroImage: HeroImage = {
@@ -98,12 +99,14 @@ export default function HeroSection({
   showContactCard = false,
   padding = "default",
   imageLayout = "split",
+  internalLayout = false,
 }: HeroSectionProps) {
   const isShallowImage = imageLayout === "shallow";
   const splitImageClasses = "!aspect-auto h-[440px] sm:h-[520px] lg:!aspect-[4/5] lg:h-auto";
 
-  const paddingClass =
-    padding === "contact"
+  const paddingClass = internalLayout
+    ? `${heroBreathing} ${sectionBottom}`
+    : padding === "contact"
       ? "py-16 lg:py-24"
       : "py-16 sm:py-24 lg:py-32";
 
@@ -232,11 +235,21 @@ export default function HeroSection({
 
         {!showContactCard && image && (
           <div
-            className={`relative -mx-5 min-[768px]:-mx-8 lg:mx-0 ${
-              showConsultationCard ? "pb-12 sm:pb-14" : "pb-0"
-            } lg:pb-0`}
+            className={
+              internalLayout
+                ? "relative w-full"
+                : `relative -mx-5 min-[768px]:-mx-6 min-[1060px]:-mx-8 lg:mx-0 ${
+                    showConsultationCard ? "pb-12 sm:pb-14" : "pb-0"
+                  } lg:pb-0`
+            }
           >
-            <div className="relative mx-5 min-[768px]:mx-8 lg:mx-0">
+            <div
+              className={
+                internalLayout
+                  ? "relative w-full"
+                  : "relative mx-5 min-[768px]:mx-6 min-[1060px]:mx-8 lg:mx-0"
+              }
+            >
               <ImagePlaceholder
                 src={image.src}
                 alt={image.alt}

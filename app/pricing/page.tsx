@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { IconCheck } from "@/components/icons";
 import { cardHoverClass, cardHoverClassDark } from "@/lib/card-styles";
 import { pricingPlans } from "@/lib/content";
+import { sectionY } from "@/lib/layout";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -58,9 +59,10 @@ export default function PricingPage() {
         }}
         showConsultationCard={false}
         padding="contact"
+        internalLayout
       />
 
-      <section className="bg-section-white pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-28">
+      <section className={`bg-section-white ${sectionY}`}>
         <Container>
           <div className="grid gap-6 lg:grid-cols-3">
             {pricingPlans.map((plan) => (
@@ -151,7 +153,7 @@ export default function PricingPage() {
         <div className="border-t border-primary/10" />
       </Container>
 
-      <section className="bg-section-warm pt-12 pb-16 sm:py-24">
+      <section className={`bg-section-warm ${sectionY}`}>
         <Container size="prose">
           <div className="mb-12 text-center">
             <SectionHeading
@@ -180,6 +182,7 @@ export default function PricingPage() {
       </section>
 
       <CTASection
+        spacing="internal"
         title="Still comparing options?"
         description="Book a free learning assessment and we'll help you choose the right support for your child — with honest advice and no pressure."
       />

@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import SectionIntro from "@/components/SectionIntro";
 import { whyChooseUs } from "@/lib/content";
-import { homeSectionY } from "@/lib/homepage-spacing";
+import { groupGap, sectionY } from "@/lib/layout";
 
 const numberStyles = [
   "bg-[var(--figma-quote-yellow)] text-black",
@@ -12,9 +12,9 @@ const numberStyles = [
 
 export default function BuildingConfidenceSection() {
   return (
-    <section className={`bg-[var(--figma-navy)] ${homeSectionY}`}>
-      <Container className="grid items-start gap-12 min-[1060px]:grid-cols-2 min-[1060px]:gap-16">
-        <div className="flex flex-col gap-12">
+    <section className={`bg-[var(--figma-navy)] ${sectionY}`}>
+      <Container className={`grid items-start ${groupGap} min-[1060px]:grid-cols-2`}>
+        <div className={`flex flex-col ${groupGap}`}>
           <SectionIntro
             eyebrow="Trusted Education Support"
             title="Building confidence as well as results"

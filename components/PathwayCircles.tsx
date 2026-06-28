@@ -1,6 +1,7 @@
 /** Education Pathways section — homepage only, rendered from app/page.tsx */
 import Container from "@/components/Container";
 import SectionIntro from "@/components/SectionIntro";
+import { contentToCards, groupGap, sectionY } from "@/lib/layout";
 
 const pathways = [
   { label: "Primary", lines: ["Primary"], border: "strong" as const },
@@ -18,17 +19,17 @@ const borderClasses = {
 
 export default function PathwayCircles() {
   return (
-    <section id="resources" className="bg-[var(--figma-hero-teal)] pb-16 pt-16 min-[1060px]:pb-20 min-[1060px]:pt-20">
+    <section id="resources" className={`bg-[var(--figma-hero-teal)] ${sectionY}`}>
       <Container>
         <SectionIntro
           eyebrow="Education Pathways"
           title="Supporting learners at every stage"
           light
           pillVariant="pathway"
-          className="mx-auto max-w-none gap-8 pb-[60px]"
+          className="mx-auto max-w-none"
         />
 
-        <div className="flex flex-col items-center gap-10">
+        <div className={`flex flex-col items-center ${contentToCards} ${groupGap}`}>
           <ul
             data-pathway-circles
             className="grid w-full grid-cols-2 gap-4 min-[768px]:grid-cols-3 min-[1060px]:grid-cols-6 min-[1060px]:gap-4"

@@ -1,7 +1,14 @@
 import Container from "@/components/Container";
 import SectionIntro from "@/components/SectionIntro";
 import { testimonials } from "@/lib/content";
-import { homeSectionBottom, homeSectionY } from "@/lib/homepage-spacing";
+import {
+  cardsToCta,
+  contentToCards,
+  darkBlockGroup,
+  darkBlockLarge,
+  groupGap,
+  sectionBottom,
+} from "@/lib/layout";
 
 function StarRating({ className = "h-5 w-5" }: { className?: string }) {
   return (
@@ -15,12 +22,19 @@ function StarRating({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-const cardRotations = ["-rotate-1", "-rotate-3", "rotate-2"];
+type TestimonialCardsProps = {
+  spacing?: "home" | "internal";
+};
 
-export default function TestimonialCards() {
+export default function TestimonialCards({ spacing = "home" }: TestimonialCardsProps) {
+  const isInternal = spacing === "internal";
+
   return (
-    <section id="testimonials" className={`bg-[var(--figma-navy)] ${homeSectionBottom}`}>
-      <Container className={homeSectionY}>
+    <section
+      id="testimonials"
+      className={`bg-[var(--figma-navy)] ${sectionBottom}`}
+    >
+      <Container className={isInternal ? darkBlockLarge : undefined}>
         <SectionIntro
           eyebrow="Testimonials"
           title="Trusted by parents and students"
@@ -30,10 +44,15 @@ export default function TestimonialCards() {
         />
       </Container>
 
-      <Container className="pb-8 min-[1060px]:pb-12">
-        <div className="flex justify-center">
-          <div className="rotate-2">
-            <div className="w-full max-w-[600px] border border-[var(--figma-hero-teal)]/40 bg-white p-5 min-[1060px]:p-7">
+      <Container className={isInternal ? darkBlockGroup : contentToCards}>
+        <div className={isInternal ? "w-full" : "w-full rotate-2"}>
+          <div
+            className={`w-full border border-[var(--figma-hero-teal)]/40 bg-white p-5 min-[1060px]:p-7 ${
+              isInternal
+                ? "min-[1060px]:mx-auto min-[1060px]:max-w-[520px]"
+                : "min-[1060px]:mx-auto min-[1060px]:max-w-[600px]"
+            }`}
+          >
               <div className="flex flex-col items-center gap-4 text-center min-[1060px]:gap-5">
                 <span className="inline-flex w-fit rounded-[52px] bg-[var(--figma-hero-teal)]/10 px-4 py-2.5 text-xs font-semibold capitalize leading-4 text-[var(--figma-ink)] min-[1060px]:px-[18px] min-[1060px]:py-3">
                   Google Reviews
@@ -50,15 +69,18 @@ export default function TestimonialCards() {
               </div>
             </div>
           </div>
-        </div>
       </Container>
 
-      <Container>
-        <div className="grid gap-4 min-[768px]:grid-cols-3 min-[1060px]:gap-5">
+      <Container className={isInternal ? cardsToCta : undefined}>
+        <div className={`grid min-[768px]:grid-cols-3 ${groupGap}`}>
           {testimonials.map((testimonial, index) => (
             <article
               key={testimonial.name}
-              className={`${cardRotations[index]} transition-transform duration-300 hover:scale-[1.02]`}
+              className={
+                isInternal
+                  ? ""
+                  : `${["-rotate-1", "-rotate-3", "rotate-2"][index]} transition-transform duration-300 hover:scale-[1.02]`
+              }
             >
               <div className="flex h-full flex-col gap-4 bg-[var(--figma-testimonial-peach)] p-5 min-[1060px]:gap-6 min-[1060px]:p-7">
                 <div className="flex flex-col gap-3 min-[1060px]:gap-4">
