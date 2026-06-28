@@ -7,11 +7,19 @@ export const siteConfig = {
   hours: "Mon–Sat, 9:00am – 7:00pm",
 };
 
-export const navLinks = [
+export type NavLink = {
+  href: string;
+  label: string;
+};
+
+/** Primary site navigation — single source of truth for header, footer, and mobile menu */
+export const primaryNavLinks: NavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/services", label: "Our Services" },
+  { href: "/services", label: "Student Support" },
+  { href: "/pricing", label: "Programmes" },
+  { href: "/#resources", label: "Resources" },
+  { href: "/#testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];
 

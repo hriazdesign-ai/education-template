@@ -9,18 +9,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";
-import { siteConfig } from "@/lib/content";
+import Logo from "@/components/Logo";
+import { primaryNavLinks } from "@/lib/content";
 import { homeNavHeight } from "@/lib/homepage-spacing";
-
-const figmaNavLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/services", label: "Support Services" },
-  { href: "/pricing", label: "Programmes" },
-  { href: "/#resources", label: "Resources" },
-  { href: "/#testimonials", label: "Testimonials" },
-  { href: "/contact", label: "Contact" },
-];
 
 const navMotionClasses =
   "transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[transform,opacity]";
@@ -67,21 +58,6 @@ function NavLink({
           isActive ? "scale-x-100" : ""
         }`}
       />
-    </Link>
-  );
-}
-
-function LogoMark({ isHome }: { isHome: boolean }) {
-  return (
-    <Link
-      href="/"
-      className={`inline-flex shrink-0 items-center justify-center border border-[var(--figma-coral)] px-2 py-1.5 max-[767px]:max-w-[58vw] min-[768px]:px-3 min-[768px]:py-2.5 min-[1060px]:px-3.5 min-[1060px]:py-2 ${
-        isHome ? "text-white" : "text-[var(--figma-ink)]"
-      }`}
-    >
-      <span className="font-serif text-[11px] font-normal uppercase leading-[14px] tracking-[-0.04em] min-[768px]:text-sm min-[768px]:leading-5 min-[1060px]:text-[19px] min-[1060px]:leading-[22px] min-[1060px]:tracking-[-0.76px]">
-        {siteConfig.name}
-      </span>
     </Link>
   );
 }
@@ -179,13 +155,13 @@ export default function Header() {
         data-home-nav-inner={isHome ? "" : undefined}
         className={`flex ${homeNavHeight} items-center justify-between gap-3 min-[1060px]:gap-4`}
       >
-        <LogoMark isHome={isHome} />
+        <Logo variant={isHome ? "light" : "dark"} />
 
         <nav
           className="hidden items-center gap-5 min-[1060px]:flex"
           aria-label="Main navigation"
         >
-          {figmaNavLinks.map((link) => (
+          {primaryNavLinks.map((link) => (
             <NavLink
               key={`${link.href}-${link.label}`}
               href={link.href}
@@ -233,7 +209,7 @@ export default function Header() {
         >
           <Container className="py-3">
             <ul className="flex flex-col gap-0.5">
-              {figmaNavLinks.map((link) => {
+              {primaryNavLinks.map((link) => {
                 const isActive = isLinkActive(link.href);
                 return (
                   <li key={`mobile-${link.href}-${link.label}`}>

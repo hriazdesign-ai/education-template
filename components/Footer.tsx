@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import Logo from "@/components/Logo";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
-import { footerBadges, navLinks, siteConfig } from "@/lib/content";
+import { footerBadges, primaryNavLinks, siteConfig } from "@/lib/content";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,11 +12,7 @@ export default function Footer() {
       <Container>
         <div className="grid gap-5 border-b border-[var(--figma-hero-teal)]/40 pb-6 min-[1060px]:grid-cols-4 min-[1060px]:gap-[21px] min-[1060px]:pb-[42px]">
           <div className="flex flex-col gap-3 min-[1060px]:gap-[21px]">
-            <Link href="/" className="inline-block">
-              <span className="inline-flex items-center justify-center bg-[var(--figma-hero-teal)]/40 px-4 py-2 font-serif text-base font-medium text-[var(--figma-ink)] min-[1060px]:px-5 min-[1060px]:py-3 min-[1060px]:text-lg">
-                {siteConfig.name}
-              </span>
-            </Link>
+            <Logo variant="dark" />
             <p className="max-w-xs text-sm leading-5 text-[var(--figma-ink)]">
               Helping students build confidence, improve results and develop a lifelong love of
               learning.
@@ -28,8 +25,8 @@ export default function Footer() {
                 NAVIGATION
               </h3>
               <ul className="flex flex-col gap-1 min-[1060px]:gap-2">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
+                {primaryNavLinks.map((link) => (
+                  <li key={`${link.href}-${link.label}`}>
                     <Link
                       href={link.href}
                       className="text-xs leading-4 text-[var(--figma-ink)] transition-opacity hover:opacity-70 min-[1060px]:text-sm min-[1060px]:leading-5"

@@ -3,17 +3,17 @@ import Container from "@/components/Container";
 import SectionIntro from "@/components/SectionIntro";
 
 const pathways = [
-  { label: "Primary", lines: ["Primary"], tone: "green" as const },
-  { label: "KS2 SATs", lines: ["KS2 SATs"], tone: "yellow" as const },
-  { label: "11+ Entrance", lines: ["11+", "Entrance"], tone: "green" as const },
-  { label: "GCSE", lines: ["GCSE"], tone: "yellow" as const },
-  { label: "A-Level", lines: ["A-Level"], tone: "green" as const },
-  { label: "Online Tuition", lines: ["Online", "Tuition"], tone: "yellow" as const },
+  { label: "Primary", lines: ["Primary"], border: "strong" as const },
+  { label: "KS2 SATs", lines: ["KS2 SATs"], border: "muted" as const },
+  { label: "11+ Entrance", lines: ["11+", "Entrance"], border: "strong" as const },
+  { label: "GCSE", lines: ["GCSE"], border: "muted" as const },
+  { label: "A-Level", lines: ["A-Level"], border: "strong" as const },
+  { label: "Online Tuition", lines: ["Online", "Tuition"], border: "muted" as const },
 ];
 
-const toneClasses = {
-  green: "bg-[var(--figma-green)]",
-  yellow: "bg-[var(--figma-quote-yellow)]",
+const borderClasses = {
+  strong: "border-white",
+  muted: "border-white/40",
 };
 
 export default function PathwayCircles() {
@@ -37,12 +37,12 @@ export default function PathwayCircles() {
               <li key={pathway.label} className="flex w-full justify-center">
                 <div
                   data-pathway-circle
-                  className={`flex aspect-square w-full max-w-[158px] flex-col items-center justify-center rounded-full px-3 text-center min-[1060px]:max-w-none min-[1060px]:px-4 ${toneClasses[pathway.tone]}`}
+                  className={`flex h-[100px] w-full flex-col items-center justify-center rounded-full border border-solid px-4 text-center min-[1060px]:px-6 ${borderClasses[pathway.border]}`}
                 >
                   {pathway.lines.map((line) => (
                     <span
                       key={line}
-                      className="text-sm font-semibold uppercase leading-[22px] text-[var(--figma-ink)] min-[1060px]:text-[20px] min-[1060px]:leading-[22px]"
+                      className="text-[16px] font-semibold uppercase leading-[18px] tracking-[1px] text-white"
                     >
                       {line}
                     </span>

@@ -9,24 +9,32 @@ import EyebrowPill from "@/components/EyebrowPill";
 import { stats } from "@/lib/content";
 import { homeSectionY } from "@/lib/homepage-spacing";
 
+const HOME_HERO_IMAGE = "/images/teaching-1a.jpg";
+
+// Alternate headline options for review (do not enable without sign-off):
+// "Building confidence and helping every student reach their potential."
+// "Personalised tuition that helps students thrive."
+// "Supporting students to grow in confidence and achieve their goals."
+
 export default function HomeHero() {
   return (
     <section>
       <div
         data-home-hero-image
-        className="relative h-[240px] min-[768px]:h-[300px] min-[1060px]:h-[519px] w-full shrink-0 overflow-hidden rounded-none"
+        className="relative z-10 -mb-7 h-[240px] min-[768px]:h-[300px] min-[1060px]:h-[519px] w-full shrink-0 overflow-hidden rounded-none"
       >
         <Image
-          src="/images/teaching-1.jpg"
+          src={HOME_HERO_IMAGE}
           alt="Tutor supporting a student with schoolwork"
           fill
           priority
-          className="rounded-none object-cover object-[center_30%]"
+          unoptimized
+          className="rounded-none object-cover object-[52%_35%]"
           sizes="100vw"
         />
       </div>
 
-      <div className={`bg-[var(--figma-hero-teal)] ${homeSectionY}`}>
+      <div className={`relative z-20 bg-[var(--figma-hero-teal)] ${homeSectionY}`}>
         <Container>
           <Container
             size="prose"
@@ -36,6 +44,7 @@ export default function HomeHero() {
             <EyebrowPill variant="dark">Trusted Education Support</EyebrowPill>
 
             <h1 className="text-[32px] font-normal leading-[1.06] tracking-[-0.02em] text-white min-[768px]:text-[52px] min-[1060px]:text-[66px] min-[1060px]:leading-[70px] min-[1060px]:tracking-[-1.32px]">
+              {/* Alternate headlines — see constants above this component */}
               Helping Students Build Confidence &amp; Achieve Their Potential
             </h1>
 
