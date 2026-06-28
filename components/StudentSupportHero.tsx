@@ -3,11 +3,9 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
 import {
-  groupGap,
-  heroBreathing,
-  navOffset,
   sectionBottom,
   sectionIntroGap,
+  sectionTop,
 } from "@/lib/layout";
 
 const heroBenefits = [
@@ -36,7 +34,7 @@ type StudentSupportHeroProps = {
 
 export default function StudentSupportHero({ image }: StudentSupportHeroProps) {
   return (
-    <section className={`bg-[var(--figma-hero-teal)] ${navOffset} ${sectionBottom}`}>
+    <section className={`bg-[var(--figma-hero-teal)] ${sectionBottom}`}>
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden min-[768px]:h-[280px] min-[1060px]:h-[350px]">
         <Image
           src={image.src}
@@ -51,9 +49,9 @@ export default function StudentSupportHero({ image }: StudentSupportHeroProps) {
 
       <Container
         size="prose"
-        className={`flex flex-col items-center text-center ${heroBreathing} ${groupGap}`}
+        className={`flex flex-col items-center text-center ${sectionTop}`}
       >
-        <div className={`flex flex-col items-center ${sectionIntroGap}`}>
+        <div className={`flex w-full flex-col items-center ${sectionIntroGap}`}>
           <EyebrowPill variant="dark" className="px-[18px] py-3 text-sm leading-4">
             Trusted Education Support
           </EyebrowPill>
@@ -69,13 +67,13 @@ export default function StudentSupportHero({ image }: StudentSupportHeroProps) {
           </p>
         </div>
 
-        <ul className="flex w-full flex-col items-center gap-2 min-[768px]:max-w-none min-[768px]:flex-row min-[768px]:flex-wrap min-[768px]:justify-center min-[768px]:gap-x-[21px] min-[768px]:gap-y-3">
+        <ul className="mt-4 flex w-full flex-col items-center gap-2 min-[768px]:mt-5 min-[768px]:max-w-none min-[768px]:flex-row min-[768px]:flex-wrap min-[768px]:justify-center min-[768px]:gap-x-[21px] min-[768px]:gap-y-3">
           {heroBenefits.map((item) => (
             <HeroCheckItem key={item} label={item} />
           ))}
         </ul>
 
-        <div className="flex w-full max-[359px]:flex-col max-[359px]:items-stretch flex-row items-center justify-center gap-2 min-[360px]:gap-7">
+        <div className="mt-8 flex w-full max-[359px]:flex-col max-[359px]:items-stretch flex-row items-center justify-center gap-2 min-[360px]:gap-7 min-[1060px]:mt-12">
           <Link
             href="/contact"
             className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] p-5 text-sm font-semibold leading-4 text-white transition-opacity hover:opacity-90 min-[360px]:flex-none"

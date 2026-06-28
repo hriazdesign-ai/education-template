@@ -4,7 +4,6 @@ import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
 import {
   groupGap,
-  heroBreathing,
   navOffset,
   sectionBottom,
   sectionIntroGap,
@@ -12,7 +11,6 @@ import {
 
 const heroBenefits = [
   "Personalised learning plans",
-  "GCSE & A-Level preparation",
   "Online and in-person support",
 ];
 
@@ -37,9 +35,9 @@ type ServicesHeroProps = {
 export default function ServicesHero({ image }: ServicesHeroProps) {
   return (
     <section className={`bg-[var(--figma-hero-teal)] ${navOffset} ${sectionBottom}`}>
-      <Container className={heroBreathing}>
+      <Container>
         <div className={`grid items-stretch ${groupGap} min-[1060px]:grid-cols-[minmax(0,1fr)_600px]`}>
-          <div className={`flex flex-col justify-center ${groupGap}`}>
+          <div className="order-2 flex flex-col justify-center max-[1059px]:pt-14 min-[1060px]:order-1 min-[1060px]:pt-0">
             <div className={`flex max-w-[640px] flex-col ${sectionIntroGap}`}>
               <EyebrowPill variant="dark" className="px-[18px] py-3 text-base leading-4">
                 Our Services
@@ -56,13 +54,13 @@ export default function ServicesHero({ image }: ServicesHeroProps) {
               </p>
             </div>
 
-            <ul className="flex flex-col gap-2 min-[768px]:flex-row min-[768px]:flex-wrap min-[768px]:gap-x-[21px] min-[768px]:gap-y-[21px]">
+            <ul className="mt-4 flex flex-col gap-2 min-[768px]:mt-5 min-[768px]:flex-row min-[768px]:flex-wrap min-[768px]:gap-x-[21px] min-[768px]:gap-y-[21px]">
               {heroBenefits.map((item) => (
                 <HeroCheckItem key={item} label={item} />
               ))}
             </ul>
 
-            <div className="flex w-full max-[359px]:flex-col max-[359px]:items-stretch flex-row flex-wrap items-center gap-2 min-[360px]:gap-7">
+            <div className="mt-8 flex w-full max-[359px]:flex-col max-[359px]:items-stretch flex-row flex-wrap items-center gap-2 min-[360px]:gap-7 min-[1060px]:mt-12">
               <Link
                 href="/contact"
                 className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] p-5 text-base font-semibold leading-[22px] text-white transition-opacity hover:opacity-90 min-[360px]:flex-none"
@@ -78,7 +76,7 @@ export default function ServicesHero({ image }: ServicesHeroProps) {
             </div>
           </div>
 
-          <div className="relative h-[240px] w-full overflow-hidden min-[768px]:min-h-[360px] min-[768px]:h-auto min-[1060px]:min-h-[700px]">
+          <div className="relative order-1 h-[240px] w-full overflow-hidden min-[768px]:min-h-[360px] min-[768px]:h-auto min-[1060px]:order-2 min-[1060px]:min-h-[700px]">
             <Image
               src={image.src}
               alt={image.alt}

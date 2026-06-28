@@ -5,6 +5,7 @@ import {
   contentToCards,
   sectionBottom,
   sectionIntroGap,
+  sectionTop,
 } from "@/lib/layout";
 
 const supportAreas = [
@@ -67,7 +68,7 @@ const accentBarClasses = [
 
 export default function StudentSupportAreas() {
   return (
-    <section className={`bg-[var(--figma-mint-bg)] ${sectionBottom}`}>
+    <section className={`bg-[var(--figma-mint-bg)] ${sectionTop} ${sectionBottom}`}>
       <Container>
         <Container
           size="prose"

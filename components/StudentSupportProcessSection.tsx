@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
-import { groupGap, sectionIntroGap } from "@/lib/layout";
+import { groupGap, sectionBottom, sectionIntroGap, sectionTop } from "@/lib/layout";
 
 const processSteps = [
   {
@@ -34,9 +34,9 @@ const numberStyles = [
 
 export default function StudentSupportProcessSection() {
   return (
-    <section className="bg-[var(--figma-navy)]">
+    <section className={`bg-[var(--figma-navy)] ${sectionTop} ${sectionBottom}`}>
       <Container>
-        <div className={`grid items-start ${groupGap} min-[1060px]:grid-cols-2`}>
+        <div className="grid items-start gap-0 min-[1060px]:grid-cols-2 min-[1060px]:gap-12">
           <div className={`flex flex-col ${groupGap}`}>
             <div className={`flex flex-col ${sectionIntroGap}`}>
               <EyebrowPill variant="dark">Student Support</EyebrowPill>
@@ -63,7 +63,9 @@ export default function StudentSupportProcessSection() {
             </div>
           </div>
 
-          <div className={`flex w-full flex-col self-start ${sectionIntroGap}`}>
+          <div
+            className={`flex w-full flex-col self-start ${sectionIntroGap} max-[1059px]:mt-14 min-[1060px]:mt-0`}
+          >
             <EyebrowPill variant="dark">How It Works</EyebrowPill>
             <h2 className="text-[28px] font-normal leading-[38px] tracking-[-0.4px] text-white min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px]">
               How support works
@@ -74,7 +76,7 @@ export default function StudentSupportProcessSection() {
                 {processSteps.map((step, index) => (
                   <li
                     key={step.title}
-                    className={`flex flex-col ${groupGap} p-6 ${
+                    className={`flex flex-col gap-4 p-6 min-[1060px]:gap-5 ${
                       index < processSteps.length - 1 ? "border-b border-white/40" : ""
                     }`}
                   >
