@@ -77,12 +77,6 @@ h4 {
   font-family: var(--font-source-serif), Georgia, serif;
 }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--accent-text);
-  outline-offset: 2px;
-}
-
 /* Homepage desktop fallbacks — ensures 1060px+ styles apply even if Tailwind misses scanned classes */
 @media (min-width: 1060px) {
   [data-home-hero-image] {
@@ -138,6 +132,14 @@ button:focus-visible {
   .sticky-note-4 {
     transform: none;
   }
+
+  .sticky-note-1:hover,
+  .sticky-note-2:hover,
+  .sticky-note-3:hover,
+  .sticky-note-4:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 @media (hover: hover) {
@@ -171,4 +173,11 @@ button:focus-visible {
   .audience-card:hover .audience-card-image {
     transform: scale(1.02);
   }
+}
+
+/* Keyboard focus — visible on interactive elements site-wide */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--figma-hero-teal);
+  outline-offset: 2px;
 }

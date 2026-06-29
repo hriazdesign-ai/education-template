@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Logo from "@/components/Logo";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { footerBadges, primaryNavLinks, siteConfig } from "@/lib/content";
-import { sectionY } from "@/lib/layout";
+import { footerBadgeRow, groupBottom, groupGap, groupTop, sectionY } from "@/lib/layout";
 
 const footerListClass = "flex flex-col gap-3";
 const footerItemClass =
@@ -58,7 +58,7 @@ export default function Footer() {
   return (
     <footer className={`bg-[var(--figma-mint-bg)] ${sectionY}`}>
       <Container>
-        <div className="grid grid-cols-1 items-start gap-8 border-b border-[var(--figma-hero-teal)]/40 pb-8 min-[768px]:grid-cols-3 min-[768px]:gap-12 min-[768px]:pb-10">
+        <div className={`grid grid-cols-1 items-start border-b border-[var(--figma-hero-teal)]/40 ${groupGap} ${groupBottom} min-[768px]:grid-cols-3`}>
           <div className="flex min-w-0 flex-col gap-3">
             <Logo variant="dark" />
             <p className="max-w-full text-sm leading-5 text-[var(--figma-ink)]">
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 py-4 min-[1060px]:gap-3 min-[1060px]:py-6">
+        <div className={`${footerBadgeRow} ${groupTop}`}>
           {footerBadges.map((badge) => (
             <span
               key={badge}

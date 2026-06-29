@@ -6,6 +6,8 @@ import {
   darkBlockGroup,
   darkBlockLargeMargin,
   sectionIntroGap,
+  stickyNoteGrid,
+  stickyNotePadding,
 } from "@/lib/layout";
 
 const familyCards = [
@@ -51,7 +53,7 @@ export default function ServicesWhyChoose({ image }: ServicesWhyChooseProps) {
           pad={false}
           className={`mx-auto flex flex-col items-center text-center ${sectionIntroGap} ${darkBlockLargeMargin}`}
         >
-          <EyebrowPill variant="dark" className="px-[18px] py-3 text-base leading-4">
+          <EyebrowPill variant="dark" size="section">
             Why Families Choose Us
           </EyebrowPill>
           <h2 className="text-[28px] font-normal leading-[38px] tracking-[-0.4px] text-white min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px]">
@@ -63,15 +65,14 @@ export default function ServicesWhyChoose({ image }: ServicesWhyChooseProps) {
           </p>
         </Container>
 
-        <div
-          className={`grid gap-4 overflow-visible min-[768px]:grid-cols-2 min-[1060px]:grid-cols-4 min-[1060px]:gap-5 ${darkBlockGroup}`}
-        >
+        <div className={`${stickyNoteGrid} ${darkBlockGroup}`}>
           {familyCards.map((card, index) => (
             <StickyNoteCard
               key={card.title}
               index={index as 0 | 1 | 2 | 3}
               title={card.title}
               description={card.description}
+              paddingClassName={stickyNotePadding}
             />
           ))}
         </div>

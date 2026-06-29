@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";
 import Logo from "@/components/Logo";
-import { primaryNavLinks } from "@/lib/content";
+import { primaryNavLinks, ctaPrimaryLabel } from "@/lib/content";
 import { navHeight } from "@/lib/layout";
 
 const navMotionClasses =
@@ -59,7 +59,7 @@ function BookConsultationButton({
       onClick={onClick}
       className={`inline-flex items-center justify-center rounded-[64px] bg-[var(--figma-green)] px-5 py-3 text-base font-semibold leading-[22px] tracking-[-0.04em] text-[var(--figma-ink)] transition-opacity hover:opacity-90 min-[1060px]:px-6 min-[1060px]:py-3.5 ${className}`}
     >
-      Book Consultation
+      {ctaPrimaryLabel}
     </Link>
   );
 }
@@ -153,6 +153,7 @@ export default function Header() {
           type="button"
           className="inline-flex h-9 w-9 items-center justify-center text-white min-[1060px]:hidden"
           aria-expanded={mobileOpen}
+          aria-controls="site-mobile-nav"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
@@ -170,6 +171,7 @@ export default function Header() {
 
       {mobileOpen && (
         <nav
+          id="site-mobile-nav"
           className="border-t border-white/20 bg-[rgba(17,81,90,0.95)] backdrop-blur-[50px] min-[1060px]:hidden"
           aria-label="Mobile navigation"
         >

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import { IconLocation, IconMail, IconPhone } from "@/components/icons";
 import { siteConfig } from "@/lib/content";
-import { groupGap, sectionTop, sectionBottom } from "@/lib/layout";
+import { groupGap, groupTop, sectionTop, sectionBottom } from "@/lib/layout";
 
 const contactItems = [
   {
@@ -86,7 +86,13 @@ export default function ContactDetailsSection() {
           </div>
 
           <div className="flex h-full flex-col rounded-xl border border-[#c4c4c4] bg-white p-6 min-[1060px]:p-10">
-            <form id="contact-form" className="flex h-full flex-col" action="#" method="post">
+            <form
+              id="contact-form"
+              className="flex h-full flex-col"
+              action="#"
+              method="post"
+              aria-label="Contact form"
+            >
               <div className="flex flex-col gap-3">
                 <h2 className="text-xl leading-[22px] tracking-[-0.48px] text-[var(--figma-ink)] min-[768px]:text-2xl">
                   Send a Message
@@ -96,7 +102,7 @@ export default function ContactDetailsSection() {
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-col gap-6 min-[1060px]:mt-10 min-[1060px]:gap-8">
+              <div className={`flex flex-col gap-6 min-[1060px]:gap-8 ${groupTop}`}>
                 <div className="flex flex-col gap-4">
                   <label htmlFor="fullName" className="text-base font-semibold leading-[22px] text-[var(--figma-ink)]">
                     Full Name

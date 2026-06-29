@@ -51,6 +51,26 @@ export const contentToCards = "pt-8 min-[1060px]:pt-12";
 
 export const cardsToCta = "pt-10 min-[1060px]:pt-14";
 
+// ─── Section eyebrows & sticky-note grids ─────────────────────────────────────
+
+/** Section-level eyebrow pill sizing */
+export const eyebrowPillSection =
+  "px-[18px] py-3 text-base font-semibold capitalize leading-4";
+
+/** Sticky-note FAQ grid — 24px mobile · 16px tablet+ */
+export const stickyNoteGrid =
+  "grid gap-6 overflow-visible min-[768px]:grid-cols-2 min-[768px]:gap-4 min-[1060px]:grid-cols-4 min-[1060px]:gap-4";
+
+/** Sticky-note card padding */
+export const stickyNotePadding = "px-6 py-8 min-[1060px]:px-6 min-[1060px]:py-10";
+
+/** Programme card grid — 24px mobile · 48px desktop */
+export const programmeCardGrid =
+  "grid items-stretch gap-6 overflow-visible pt-2 min-[768px]:grid-cols-3 min-[1060px]:gap-12";
+
+/** Footer badge row */
+export const footerBadgeRow = "flex flex-wrap gap-2 min-[1060px]:gap-3";
+
 // ─── Dark multi-block sections ─────────────────────────────────────────────────
 // Large break 80/56 · group break 48/32 (aliases — same tokens, semantic names)
 

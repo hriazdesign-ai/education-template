@@ -11,12 +11,14 @@ import StatsSection from "@/components/StatsSection";
 import { IconCheck } from "@/components/icons";
 import { cardHoverClass } from "@/lib/card-styles";
 import { team, whyChooseUs } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About",
   description:
     "Learn about Bright Path Learning — personalised tutoring and education support for primary, secondary and college students.",
-};
+  path: "/about",
+});
 
 const values = [
   {

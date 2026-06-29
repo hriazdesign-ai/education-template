@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
+import { ctaPrimaryLabel } from "@/lib/content";
 import {
   groupGap,
   navOffset,
@@ -39,7 +40,7 @@ export default function ServicesHero({ image }: ServicesHeroProps) {
         <div className={`grid items-stretch ${groupGap} min-[1060px]:grid-cols-[minmax(0,1fr)_600px]`}>
           <div className="order-2 flex flex-col justify-center max-[1059px]:pt-14 min-[1060px]:order-1 min-[1060px]:pt-0">
             <div className={`flex max-w-[640px] flex-col ${sectionIntroGap}`}>
-              <EyebrowPill variant="dark" className="px-[18px] py-3 text-base leading-4">
+              <EyebrowPill variant="dark" size="section">
                 Our Services
               </EyebrowPill>
 
@@ -65,7 +66,7 @@ export default function ServicesHero({ image }: ServicesHeroProps) {
                 href="/contact"
                 className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] p-5 text-base font-semibold leading-[22px] text-white transition-opacity hover:opacity-90 min-[360px]:flex-none"
               >
-                Book a free assessment
+                {ctaPrimaryLabel}
               </Link>
               <Link
                 href="#how-support-works"

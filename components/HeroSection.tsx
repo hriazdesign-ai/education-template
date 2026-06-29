@@ -1,13 +1,13 @@
 /**
- * Inner-page hero (about, contact, services, programmes).
- * The homepage hero lives in components/HomeHero.tsx — do not use this file for `/`.
+ * Legacy inner-page hero (about page only).
+ * The homepage hero lives in components/HomeHero.tsx — other routes use dedicated *Hero components.
  */
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { IconArrowRight, IconCheck } from "@/components/icons";
-import { homeHeroImageClasses, heroBreathing, navOffset, sectionBottom } from "@/lib/layout";
+import { homeHeroImageClasses, heroBreathing, sectionBottom } from "@/lib/layout";
 
 type HeroImage = {
   src: string;

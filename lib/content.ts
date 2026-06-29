@@ -7,6 +7,9 @@ export const siteConfig = {
   hours: "Mon–Sat, 9:00am – 7:00pm",
 };
 
+/** Primary CTA label — use site-wide for assessment buttons */
+export const ctaPrimaryLabel = "Book a Free Assessment";
+
 export type NavLink = {
   href: string;
   label: string;

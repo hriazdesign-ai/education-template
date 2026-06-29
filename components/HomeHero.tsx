@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
-import { stats } from "@/lib/content";
+import { stats, ctaPrimaryLabel } from "@/lib/content";
 import { homeHeroImageClasses, sectionIntroGap, sectionY } from "@/lib/layout";
 
 const HOME_HERO_IMAGE = "/images/teaching-1a.jpg";
@@ -33,7 +33,9 @@ export default function HomeHero() {
             pad={false}
             className={`flex flex-col items-center text-center ${sectionIntroGap}`}
           >
-            <EyebrowPill variant="dark">Trusted Education Support</EyebrowPill>
+            <EyebrowPill variant="dark" size="section">
+              Trusted Education Support
+            </EyebrowPill>
 
             <h1 className="text-[32px] font-normal leading-[1.06] tracking-[-0.02em] text-white min-[768px]:text-[52px] min-[1060px]:text-[66px] min-[1060px]:leading-[70px] min-[1060px]:tracking-[-1.32px]">
               Helping Students Build Confidence &amp; Achieve Their Potential
@@ -49,7 +51,7 @@ export default function HomeHero() {
                 href="/contact"
                 className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] px-3 py-3 text-xs font-semibold text-white transition-opacity hover:opacity-90 min-[360px]:flex-none min-[768px]:px-4 min-[768px]:py-4 min-[768px]:text-sm"
               >
-                Book a Free Consultation
+                {ctaPrimaryLabel}
               </Link>
               <Link
                 href="/services"

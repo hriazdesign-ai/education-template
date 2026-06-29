@@ -4,7 +4,7 @@ import { IconCheck } from "@/components/icons";
 import SectionIntro from "@/components/SectionIntro";
 import { audiences } from "@/lib/content";
 import { publicImageExists } from "@/lib/image-utils";
-import { contentToCards, sectionBottom, sectionTop } from "@/lib/layout";
+import { contentToCards, groupGap, sectionBottom, sectionTop } from "@/lib/layout";
 
 const IMAGE_ASPECT = "aspect-[4/3] w-full";
 
@@ -49,7 +49,7 @@ export default function AudienceCards() {
       </Container>
 
       <Container className={contentToCards}>
-        <ul className="grid items-stretch gap-4 min-[768px]:grid-cols-3 min-[1060px]:gap-6">
+        <ul className={`grid items-stretch min-[768px]:grid-cols-3 ${groupGap}`}>
           {audiences.map((audience, index) => {
             const isCenter = index === 1;
 

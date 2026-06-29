@@ -3,6 +3,7 @@ import { DM_Sans, Homemade_Apple, Source_Serif_4 } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { siteConfig } from "@/lib/content";
+import { createPageMetadata, defaultDescription, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -24,12 +25,12 @@ const homemadeApple = Homemade_Apple({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Personalised tutoring and educational support for primary, secondary and college students. Book a free learning assessment today.",
+  ...createPageMetadata({ description: defaultDescription }),
 };
 
 export default function RootLayout({

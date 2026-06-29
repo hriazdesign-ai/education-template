@@ -30,7 +30,9 @@ export default function SectionIntro({
       pad={false}
       className={`flex flex-col ${sectionIntroGap} ${alignClass} ${className}`}
     >
-      <EyebrowPill variant={resolvedPill}>{eyebrow}</EyebrowPill>
+      <EyebrowPill variant={resolvedPill} size="section">
+        {eyebrow}
+      </EyebrowPill>
       <h2
         className={`text-[28px] font-normal leading-[38px] tracking-[-0.4px] min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px] ${
           light ? "text-white" : "text-[var(--figma-ink)]"

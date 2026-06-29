@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import EyebrowPill from "@/components/EyebrowPill";
+import { ctaPrimaryLabel } from "@/lib/content";
 import {
   sectionBottom,
   sectionIntroGap,
@@ -52,7 +53,7 @@ export default function StudentSupportHero({ image }: StudentSupportHeroProps) {
         className={`flex flex-col items-center text-center ${sectionTop}`}
       >
         <div className={`flex w-full flex-col items-center ${sectionIntroGap}`}>
-          <EyebrowPill variant="dark" className="px-[18px] py-3 text-sm leading-4">
+          <EyebrowPill variant="dark" size="section">
             Trusted Education Support
           </EyebrowPill>
 
@@ -78,7 +79,7 @@ export default function StudentSupportHero({ image }: StudentSupportHeroProps) {
             href="/contact"
             className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] p-5 text-sm font-semibold leading-4 text-white transition-opacity hover:opacity-90 min-[360px]:flex-none"
           >
-            Book a Free Consultation
+            {ctaPrimaryLabel}
           </Link>
           <Link
             href="/services"

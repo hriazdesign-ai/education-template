@@ -39,7 +39,9 @@ export default function StudentSupportProcessSection() {
         <div className="grid items-start gap-0 min-[1060px]:grid-cols-2 min-[1060px]:gap-12">
           <div className={`flex flex-col ${groupGap}`}>
             <div className={`flex flex-col ${sectionIntroGap}`}>
-              <EyebrowPill variant="dark">Student Support</EyebrowPill>
+              <EyebrowPill variant="dark" size="section">
+                Student Support
+              </EyebrowPill>
               <h2 className="text-[28px] font-normal leading-[38px] tracking-[-0.4px] text-white min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px]">
                 Helping students feel seen, supported and ready to grow
               </h2>
@@ -66,7 +68,9 @@ export default function StudentSupportProcessSection() {
           <div
             className={`flex w-full flex-col self-start ${sectionIntroGap} max-[1059px]:mt-14 min-[1060px]:mt-0`}
           >
-            <EyebrowPill variant="dark">How It Works</EyebrowPill>
+            <EyebrowPill variant="dark" size="section">
+              How It Works
+            </EyebrowPill>
             <h2 className="text-[28px] font-normal leading-[38px] tracking-[-0.4px] text-white min-[768px]:text-[32px] min-[768px]:leading-[44px] min-[1060px]:text-[40px]">
               How support works
             </h2>

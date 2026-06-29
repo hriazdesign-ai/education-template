@@ -5,9 +5,9 @@ import {
   cardsToCta,
   contentToCards,
   darkBlockGroup,
-  darkBlockLarge,
   groupGap,
   sectionBottom,
+  sectionTop,
 } from "@/lib/layout";
 
 function StarRating({ className = "h-5 w-5" }: { className?: string }) {
@@ -32,9 +32,9 @@ export default function TestimonialCards({ spacing = "home" }: TestimonialCardsP
   return (
     <section
       id="testimonials"
-      className={`bg-[var(--figma-navy)] ${sectionBottom}`}
+      className={`bg-[var(--figma-navy)] ${sectionTop} ${sectionBottom}`}
     >
-      <Container className={isInternal ? darkBlockLarge : undefined}>
+      <Container>
         <SectionIntro
           eyebrow="Testimonials"
           title="Trusted by parents and students"

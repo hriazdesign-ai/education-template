@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { stickyNotePadding } from "@/lib/layout";
 
 export const stickyNoteColors = [
   "bg-[var(--figma-quote-yellow)]",
@@ -19,7 +20,7 @@ export default function StickyNoteCard({
   index,
   title,
   description,
-  paddingClassName = "px-6 py-7 min-[1060px]:px-6 min-[1060px]:py-8",
+  paddingClassName = stickyNotePadding,
 }: StickyNoteCardProps) {
   return (
     <div className="flex items-stretch">
