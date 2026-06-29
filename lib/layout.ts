@@ -21,11 +21,11 @@ export const navHeight = "h-14 min-[768px]:h-16 min-[1060px]:h-[80px]";
 export const navOffset = "pt-14 min-[768px]:pt-16 min-[1060px]:pt-[80px]";
 
 // ─── Section spacing (page-level) ────────────────────────────────────────────
-// Desktop 80px · mobile 56px
+// Desktop 80px · tablet 64px · mobile 48px
 
-export const sectionY = "py-14 min-[1060px]:py-20";
-export const sectionTop = "pt-14 min-[1060px]:pt-20";
-export const sectionBottom = "pb-14 min-[1060px]:pb-20";
+export const sectionY = "py-12 min-[768px]:py-16 min-[1060px]:py-20";
+export const sectionTop = "pt-12 min-[768px]:pt-16 min-[1060px]:pt-20";
+export const sectionBottom = "pb-12 min-[768px]:pb-16 min-[1060px]:pb-20";
 
 // ─── Group spacing ─────────────────────────────────────────────────────────────
 // Desktop 48px · mobile 32px
@@ -56,7 +56,7 @@ export const cardsToCta = "pt-10 min-[1060px]:pt-14";
 
 export const darkBlockLarge = sectionTop;
 export const darkBlockGroup = groupTop;
-export const darkBlockLargeMargin = "mt-14 min-[1060px]:mt-20";
+export const darkBlockLargeMargin = "mt-12 min-[768px]:mt-16 min-[1060px]:mt-20";
 
 // ─── Hero ──────────────────────────────────────────────────────────────────────
 

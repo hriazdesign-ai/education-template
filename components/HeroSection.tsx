@@ -1,5 +1,5 @@
 /**
- * Inner-page hero (about, contact, services, pricing).
+ * Inner-page hero (about, contact, services, programmes).
  * The homepage hero lives in components/HomeHero.tsx — do not use this file for `/`.
  */
 import Image from "next/image";

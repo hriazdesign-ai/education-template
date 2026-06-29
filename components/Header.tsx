@@ -70,7 +70,7 @@ export default function Header() {
   const [navVisible, setNavVisible] = useState(true);
   const lastScrollY = useRef(0);
   const isHome = pathname === "/";
-  const usesOverlayNav = isHome || pathname === "/services" || pathname === "/contact";
+  const usesOverlayNav = isHome || pathname === "/services" || pathname === "/contact" || pathname === "/programmes";
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;

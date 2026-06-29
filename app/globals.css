@@ -131,6 +131,15 @@ button:focus-visible {
   transform: rotate(1.5deg);
 }
 
+@media (max-width: 767px) {
+  .sticky-note-1,
+  .sticky-note-2,
+  .sticky-note-3,
+  .sticky-note-4 {
+    transform: none;
+  }
+}
+
 @media (hover: hover) {
   .sticky-note-1:hover {
     transform: translateY(-6px) rotate(-3deg);

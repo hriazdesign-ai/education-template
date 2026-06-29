@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Premium accounting services for sole traders, small businesses, and limited companies. Bookkeeping, payroll, VAT, tax planning, and more.",
+    "Personalised tutoring and educational support for primary, secondary and college students. Book a free learning assessment today.",
 };
 
 export default function RootLayout({

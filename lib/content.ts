@@ -17,7 +17,7 @@ export const primaryNavLinks: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Our Services" },
   { href: "/student-support", label: "Student Support" },
-  { href: "/pricing", label: "Programmes" },
+  { href: "/programmes", label: "Programmes" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -178,12 +178,11 @@ export const footerBadges = [
   "Online Learning",
 ];
 
-export const pricingPlans = [
+export const programmes = [
   {
     name: "Primary Foundations",
-    price: "From £120",
-    period: "per month",
     description: "Support tailored to younger students building confidence in core subjects.",
+    supportNote: "Ideal for building strong literacy, numeracy and learning habits.",
     features: [
       "Four 1-to-1 tutoring sessions",
       "Personalised learning plan",
@@ -195,9 +194,8 @@ export const pricingPlans = [
   },
   {
     name: "GCSE Success",
-    price: "From £160",
-    period: "per month",
     description: "Structured support for students preparing for GCSE examinations.",
+    supportNote: "Focused revision, exam technique and confidence-building.",
     features: [
       "Everything in Primary Foundations",
       "GCSE subject tuition",
@@ -209,9 +207,8 @@ export const pricingPlans = [
   },
   {
     name: "A-Level Achievement",
-    price: "From £200",
-    period: "per month",
     description: "Advanced tutoring designed to support strong academic outcomes.",
+    supportNote: "Subject-focused support for higher-level study and exams.",
     features: [
       "Everything in GCSE Success",
       "A-Level subject tuition",
