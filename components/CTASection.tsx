@@ -8,6 +8,7 @@ type CTASectionProps = {
   description?: string;
   variant?: "default" | "homepage";
   spacing?: "home" | "internal" | "services";
+  primaryButtonLabel?: string;
 };
 
 export default function CTASection({
@@ -15,6 +16,7 @@ export default function CTASection({
   description = "Book a free learning assessment and discover how personalised support can help build confidence, improve grades and develop lifelong learning skills.",
   variant = "default",
   spacing = "home",
+  primaryButtonLabel,
 }: CTASectionProps) {
   const sectionPadding = sectionY;
 
@@ -34,7 +36,7 @@ export default function CTASection({
               href="/contact"
               className="inline-flex flex-1 items-center justify-center rounded-[64px] bg-[var(--figma-coral)] px-3 py-3 text-xs font-semibold text-white transition-opacity hover:opacity-90 min-[360px]:flex-none min-[768px]:px-4 min-[768px]:py-4 min-[768px]:text-base"
             >
-              Book a Free Consultation
+              {primaryButtonLabel ?? "Book a Free Consultation"}
             </Link>
             <a
               href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}

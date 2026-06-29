@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Bright Path Learning",
   tagline: "Primary • GCSE • A-Level",
   phone: "020 7946 0958",
-  email: "hello@brightpathlearning.co.uk",
+  email: "hello@bpl.co.uk",
   address: "London, United Kingdom",
   hours: "Mon–Sat, 9:00am – 7:00pm",
 };
@@ -155,23 +155,21 @@ export const softwareLogos = [
 export const contactFaqs = [
   {
     question: "How quickly do you respond?",
-    answer:
-      "We respond to all enquiries within one business day. Urgent matters are typically handled the same day during office hours.",
+    answer: "We aim to respond to all enquiries within one business day.",
   },
   {
-    question: "Can I switch accountants easily?",
+    question: "Do you offer online tutoring?",
     answer:
-      "Yes. We manage the handover from your previous accountant, including requesting records and aligning opening balances with minimal disruption.",
+      "Yes. We provide both online and in-person support depending on location and availability.",
   },
   {
-    question: "Do you work remotely?",
+    question: "Can I arrange a free assessment?",
     answer:
-      "Absolutely. Most of our clients work with us remotely via cloud accounting software, video calls, and secure document sharing.",
+      "Yes. Every family can book a free introductory assessment before committing to regular sessions.",
   },
   {
-    question: "Is the consultation really free?",
-    answer:
-      "Yes — your initial 30-minute consultation is completely free with no obligation to proceed.",
+    question: "What ages do you support?",
+    answer: "We work with students from primary school through to GCSE and A-Level.",
   },
 ];
 
