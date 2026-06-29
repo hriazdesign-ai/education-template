@@ -18,8 +18,6 @@ export const primaryNavLinks: NavLink[] = [
   { href: "/services", label: "Our Services" },
   { href: "/student-support", label: "Student Support" },
   { href: "/pricing", label: "Programmes" },
-  { href: "/#resources", label: "Resources" },
-  { href: "/#testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];
 

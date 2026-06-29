@@ -26,7 +26,7 @@ const accentBarClasses = [
 
 export default function ServiceCards() {
   return (
-    <section className={`bg-[var(--figma-mint-bg)] ${sectionBottom}`}>
+    <section className={`bg-[var(--figma-mint-bg)] ${groupTop} ${sectionBottom}`}>
       <Container>
         <SectionIntro
           eyebrow="Our Services"

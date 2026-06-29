@@ -152,3 +152,14 @@ button:focus-visible {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   }
 }
+
+@media (hover: hover) {
+  .audience-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .audience-card:hover .audience-card-image {
+    transform: scale(1.02);
+  }
+}

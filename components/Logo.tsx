@@ -12,7 +12,7 @@ export default function Logo({ variant = "dark", className = "" }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex shrink-0 items-center justify-center border border-[var(--figma-coral)] px-2.5 py-1.5 max-[767px]:max-w-[58vw] min-[768px]:px-3 min-[768px]:py-2 min-[1060px]:px-4 min-[1060px]:py-2.5 ${
+      className={`inline-flex w-fit shrink-0 items-center justify-center border border-[var(--figma-coral)] px-2.5 py-1.5 max-[767px]:max-w-[58vw] min-[768px]:px-3 min-[768px]:py-2 min-[1060px]:px-4 min-[1060px]:py-2.5 ${
         isLight ? "text-white" : "text-[var(--figma-ink)]"
       } ${className}`}
     >

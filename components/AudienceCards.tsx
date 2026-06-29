@@ -4,20 +4,20 @@ import { IconCheck } from "@/components/icons";
 import SectionIntro from "@/components/SectionIntro";
 import { audiences } from "@/lib/content";
 import { publicImageExists } from "@/lib/image-utils";
-import { contentToCards, sectionBottom } from "@/lib/layout";
+import { contentToCards, sectionBottom, sectionTop } from "@/lib/layout";
 
-const IMAGE_HEIGHT = "h-[150px] min-[768px]:h-[200px] min-[1060px]:h-[220px]";
+const IMAGE_ASPECT = "aspect-[4/3] w-full";
 
 function AudienceImage({ src, alt }: { src: string; alt: string }) {
   if (publicImageExists(src)) {
     return (
-      <div className={`relative w-full overflow-hidden ${IMAGE_HEIGHT}`}>
+      <div className={`relative overflow-hidden ${IMAGE_ASPECT}`}>
         <Image
           src={src}
           alt={alt}
           fill
           unoptimized
-          className="object-cover"
+          className="audience-card-image object-cover transition-transform duration-[250ms] ease-out motion-reduce:transition-none"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
@@ -26,7 +26,7 @@ function AudienceImage({ src, alt }: { src: string; alt: string }) {
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-gradient-to-br from-[var(--figma-navy)] via-[var(--figma-hero-teal)]/40 to-[var(--figma-navy)] ${IMAGE_HEIGHT}`}
+      className={`relative overflow-hidden bg-gradient-to-br from-[var(--figma-navy)] via-[var(--figma-hero-teal)]/40 to-[var(--figma-navy)] ${IMAGE_ASPECT}`}
       role="img"
       aria-label={alt}
     >
@@ -37,7 +37,7 @@ function AudienceImage({ src, alt }: { src: string; alt: string }) {
 
 export default function AudienceCards() {
   return (
-    <section className={`bg-[var(--figma-navy)] ${sectionBottom}`}>
+    <section className={`bg-[var(--figma-navy)] ${sectionTop} ${sectionBottom}`}>
       <Container>
         <SectionIntro
           eyebrow="Who We Help"
@@ -49,16 +49,20 @@ export default function AudienceCards() {
       </Container>
 
       <Container className={contentToCards}>
-        <ul className="grid gap-4 min-[768px]:grid-cols-3 min-[1060px]:gap-6">
+        <ul className="grid items-stretch gap-4 min-[768px]:grid-cols-3 min-[1060px]:gap-6">
           {audiences.map((audience, index) => {
             const isCenter = index === 1;
 
             return (
               <li
                 key={audience.title}
-                className="flex flex-col border border-white/25"
+                className={`audience-card group flex h-full flex-col border border-white/25 transition-[transform,border-color] duration-[250ms] ease-out motion-reduce:transition-none ${
+                  isCenter
+                    ? "bg-[var(--figma-mint-bg)] text-[var(--figma-ink)]"
+                    : "bg-[var(--figma-navy)] text-white"
+                }`}
               >
-                <div className="relative">
+                <div className="relative shrink-0">
                   <AudienceImage src={audience.image} alt={audience.imageAlt} />
                   <span
                     className={`absolute bottom-0 left-8 z-10 translate-y-1/2 rounded-none px-3 py-2 text-xs font-semibold uppercase leading-4 ${
@@ -71,16 +75,10 @@ export default function AudienceCards() {
                   </span>
                 </div>
 
-                <div
-                  className={`flex flex-col gap-4 px-8 pb-6 pt-9 min-[1060px]:gap-5 min-[1060px]:pb-7 min-[1060px]:pt-10 ${
-                    isCenter
-                      ? "bg-[var(--figma-mint-bg)] text-[var(--figma-ink)]"
-                      : "bg-[var(--figma-navy)] text-white"
-                  }`}
-                >
+                <div className="flex flex-1 flex-col gap-4 px-8 pb-7 pt-10 min-[1060px]:gap-5 min-[1060px]:pb-8 min-[1060px]:pt-10">
                   <p className="text-base leading-[22px]">{audience.description}</p>
 
-                  <ul className="flex flex-col gap-2.5 min-[1060px]:gap-3">
+                  <ul className="mt-auto flex flex-col gap-2.5 min-[1060px]:gap-3">
                     {audience.highlights.map((highlight) => (
                       <li
                         key={highlight}

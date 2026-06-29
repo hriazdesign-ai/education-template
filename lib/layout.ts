@@ -32,6 +32,7 @@ export const sectionBottom = "pb-14 min-[1060px]:pb-20";
 
 export const groupGap = "gap-8 min-[1060px]:gap-12";
 export const groupTop = "pt-8 min-[1060px]:pt-12";
+export const groupBottom = "pb-8 min-[1060px]:pb-12";
 /** Margin variant — use when padding-top does not create visible separation */
 export const groupTopMargin = "mt-8 min-[1060px]:mt-12";
 

@@ -58,7 +58,7 @@ export default function Footer() {
   return (
     <footer className={`bg-[var(--figma-mint-bg)] ${sectionY}`}>
       <Container>
-        <div className="grid grid-cols-1 items-start gap-5 border-b border-[var(--figma-hero-teal)]/40 pb-6 min-[768px]:grid-cols-3 min-[768px]:gap-12 min-[768px]:pb-10">
+        <div className="grid grid-cols-1 items-start gap-8 border-b border-[var(--figma-hero-teal)]/40 pb-8 min-[768px]:grid-cols-3 min-[768px]:gap-12 min-[768px]:pb-10">
           <div className="flex min-w-0 flex-col gap-3">
             <Logo variant="dark" />
             <p className="max-w-full text-sm leading-5 text-[var(--figma-ink)]">

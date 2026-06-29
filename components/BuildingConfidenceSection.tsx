@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import SectionIntro from "@/components/SectionIntro";
 import { whyChooseUs } from "@/lib/content";
-import { groupGap, sectionY } from "@/lib/layout";
+import { groupGap, sectionBottom } from "@/lib/layout";
 
 const numberStyles = [
   "bg-[var(--figma-quote-yellow)] text-black",
@@ -12,7 +12,7 @@ const numberStyles = [
 
 export default function BuildingConfidenceSection() {
   return (
-    <section className={`bg-[var(--figma-navy)] ${sectionY}`}>
+    <section className={`bg-[var(--figma-navy)] ${sectionBottom}`}>
       <Container className={`grid items-start ${groupGap} min-[1060px]:grid-cols-2`}>
         <div className={`flex flex-col ${groupGap}`}>
           <SectionIntro

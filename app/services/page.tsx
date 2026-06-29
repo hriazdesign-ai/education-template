@@ -33,7 +33,7 @@ export default function ServicesPage() {
 
       <ServicesHowSupportWorks />
 
-      <TestimonialCards spacing="internal" />
+      <TestimonialCards />
 
       <CTASection
         variant="homepage"
